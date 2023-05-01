@@ -2,9 +2,6 @@
 	import { browser } from '$app/environment'
 	import { onMount } from 'svelte'
 
-	let clientWidth = browser ? window.innerWidth : 1920
-	let clientHeight = browser ? window.innerHeight : 1080
-
 	let lastPlayed
 
 	async function lanyard() {
@@ -46,15 +43,7 @@
 	}
 
 	onMount(() => {
-		function onResize(e) {
-			clientWidth = window.innerWidth
-			clientHeight = window.innerHeight
-		}
-		addEventListener('resize', onResize)
 		lanyard()
-		return () => {
-			removeEventListener('resize', onResize)
-		}
 	})
 </script>
 
