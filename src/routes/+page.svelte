@@ -1,54 +1,40 @@
 <script>
-	import { browser } from '$app/environment'
 	import { onMount } from 'svelte'
 
 	let lastPlayed
 
-	async function lanyard() {
-		const discordId = '728131016392441916'
-		const conn = new WebSocket('wss://api.lanyard.rest/socket')
-		let heartbeatInterval = 30000
-		let heartbeatSetInt = setInterval(() => {
-			conn.send(JSON.stringify({ op: 3 }))
-		}, heartbeatInterval)
-		conn.addEventListener('open', () => {
-			conn.send(
-				JSON.stringify({
-					op: 2,
-					d: {
-						subscribe_to_ids: [discordId]
-					}
-				})
-			)
-		})
-		conn.addEventListener('message', event => {
-			let message = JSON.parse(event.data)
-			switch (message.op) {
-				case 1: {
-					clearInterval(heartbeatSetInt)
-					heartbeatInterval = message.d.heartbeat_interval
-					heartbeatSetInt = setInterval(() => {
-						conn.send(JSON.stringify({ op: 3 }))
-					}, heartbeatInterval)
-				}
-				case 0: {
-					if (message.t == 'PRESENCE_UPDATE') {
-						lastPlayed = message.d?.spotify
-					} else {
-						lastPlayed = message.d[discordId]?.spotify
-					}
-				}
-			}
-		})
+	async function lastfm() {
+		const lastfmUser = 'hazysu'
+		const apiKey = 'a8bf7f8c494de7b6048f9702a737b8fd'
+		const lastfmResponse = await fetch(
+			`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${encodeURIComponent(
+				lastfmUser
+			)}&api_key=${encodeURIComponent(apiKey)}&format=json&limit=1`
+		)
+		const lastfmRecentTrack = (await lastfmResponse.json()).recenttracks
+			?.track[0]
+		if (!lastfmRecentTrack) {
+			lastPlayed = null
+		}
+		if (!lastfmRecentTrack['@attr']?.nowplaying) return
+		lastPlayed = {
+			artist: lastfmRecentTrack.artist['#text'],
+			song: lastfmRecentTrack.name
+		}
 	}
 
 	onMount(() => {
-		lanyard()
+		lastfm()
+		let lastfmInterval = setInterval(lastfm, 20 * 1000)
+		return () => {
+			clearInterval(lastfmInterval)
+		}
 	})
 </script>
 
 <svelte:head>
 	<title>hazy.sh</title>
+	<link rel="preconnect" href="https://ws.audioscrobbler.com/" />
 	<meta name="description" content="hazel cora - student web developer" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="hazy.sh" />
@@ -87,8 +73,7 @@
 				<span>Twitter</span>: <a href="https://twitter.com/hazycora">@hazycora</a>
 				<span>Pronouns</span>: she/her
 				{#if lastPlayed}
-					<span>Listening to</span
-					>: {lastPlayed.song} by {lastPlayed.artist.split('; ')[0]}
+					<span>Listening to</span>: {lastPlayed.song} by {lastPlayed.artist}
 				{/if}
 	
 				<div class="colors" aria-hidden="true">
