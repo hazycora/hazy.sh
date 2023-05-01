@@ -1,0 +1,251 @@
+<script>
+	import { browser } from '$app/environment'
+	import { onMount } from 'svelte'
+
+	let clientWidth = browser ? window.innerWidth : 1920
+	let clientHeight = browser ? window.innerHeight : 1080
+
+	let lastPlayed
+
+	async function lanyard() {
+		const discordId = '728131016392441916'
+		const conn = new WebSocket('wss://api.lanyard.rest/socket')
+		let heartbeatInterval = 30000
+		let heartbeatSetInt = setInterval(() => {
+			conn.send(JSON.stringify({ op: 3 }))
+		}, heartbeatInterval)
+		conn.addEventListener('open', () => {
+			conn.send(
+				JSON.stringify({
+					op: 2,
+					d: {
+						subscribe_to_ids: [discordId]
+					}
+				})
+			)
+		})
+		conn.addEventListener('message', event => {
+			let message = JSON.parse(event.data)
+			switch (message.op) {
+				case 1: {
+					clearInterval(heartbeatSetInt)
+					heartbeatInterval = message.d.heartbeat_interval
+					heartbeatSetInt = setInterval(() => {
+						conn.send(JSON.stringify({ op: 3 }))
+					}, heartbeatInterval)
+				}
+				case 0: {
+					if (message.t == 'PRESENCE_UPDATE') {
+						lastPlayed = message.d?.spotify
+					} else {
+						lastPlayed = message.d[discordId]?.spotify
+					}
+				}
+			}
+		})
+	}
+
+	onMount(() => {
+		function onResize(e) {
+			clientWidth = window.innerWidth
+			clientHeight = window.innerHeight
+		}
+		addEventListener('resize', onResize)
+		lanyard()
+		return () => {
+			removeEventListener('resize', onResize)
+		}
+	})
+</script>
+
+<svelte:head>
+	<title>hazy.sh</title>
+	<meta name="description" content="hazel cora - student web developer" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="hazy.sh" />
+	<meta
+		property="og:description"
+		content="hazel cora - student web developer"
+	/>
+	<meta property="og:image" content="/avatar.webp" />
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:title" content="hazy.sh" />
+	<meta
+		property="twitter:description"
+		content="hazel cora - student web developer"
+	/>
+	<meta property="twitter:image" content="/avatar.webp" />
+</svelte:head>
+
+<div class="page">
+	<div class="terminal">
+		<div class="neofetch">
+			<img
+				src="/avatar.webp"
+				width="160"
+				height="160"
+				aria-hidden="true"
+				alt=""
+				class="pfp"
+			/>
+			<pre class="neofetch__text">
+				<span>hazy</span>.<span>sh</span>
+				-------
+				<span>GitHub</span>: <a href="https://github.com/hazycora">@hazycora</a>
+				<span>Bluesky</span>: <a href="https://staging.bsky.app/profile/hazy.gay"
+					>@hazy.gay</a
+				>
+				<span>Twitter</span>: <a href="https://twitter.com/hazycora">@hazycora</a>
+				<span>Pronouns</span>: she/her
+				{#if lastPlayed}
+					<span>Listening to</span
+					>: {lastPlayed.song} by {lastPlayed.artist.split('; ')[0]}
+				{/if}
+	
+				<div class="colors" aria-hidden="true">
+					<div style="background-color: var(--black)" />
+					<div style="background-color: var(--red)" />
+					<div style="background-color: var(--green)" />
+					<div style="background-color: var(--yellow)" />
+					<div style="background-color: var(--blue)" />
+					<div style="background-color: var(--magenta)" />
+					<div style="background-color: var(--cyan)" />
+					<div style="background-color: var(--white)" />
+					<div style="background-color: var(--bright-black)" />
+					<div style="background-color: var(--bright-red)" />
+					<div style="background-color: var(--bright-green)" />
+					<div style="background-color: var(--bright-yellow)" />
+					<div style="background-color: var(--bright-blue)" />
+					<div style="background-color: var(--bright-magenta)" />
+					<div style="background-color: var(--bright-cyan)" />
+					<div style="background-color: var(--bright-white)" />
+				</div>
+			</pre>
+		</div>
+		<div class="shell">
+			<span style="color: var(--magenta)">hazy</span>@hazyarch
+			<span style="color: var(--magenta)">~</span>&gt;
+		</div>
+	</div>
+	<div class="window-container">
+		<div class="window">
+			<p>
+				hi! im <strong>hazel</strong>. i'm a student web developer.
+			</p>
+			<br />
+			<p>
+				i've been coding my own websites since 2019. i work primarily in svelte.
+				i'm also learning golang to work more with backend systems.
+			</p>
+			<br />
+			<p>
+				i'm always looking for projects to work on! if you'd like to work with
+				me please <a href="#contact">send me a message</a> :&rpar;
+			</p>
+		</div>
+	</div>
+	<div class="window-container hidden-until-target" id="contact">
+		<div class="window" style="max-width: 20rem;">
+			<ul class="contact-list">
+				<li><strong>email:</strong> hazy@besties.house</li>
+				<li><strong>discord:</strong> hazy#4297</li>
+				<li><strong>matrix:</strong> @h:besties.house</li>
+				<li><strong>xmpp:</strong> h@besties.house</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<style>
+	.page {
+		position: relative;
+		padding: 1rem;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 60rem;
+	}
+	.terminal {
+		font-family: 'Anonymous Pro', monospace;
+		line-height: 1;
+		margin-bottom: 2rem;
+	}
+	pre {
+		margin: 0;
+		white-space: pre-line;
+		word-break: break-all;
+	}
+	.pfp {
+		width: 10em;
+		max-width: 100%;
+		height: unset;
+	}
+	.neofetch {
+		color: var(--white);
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: 10em 1fr;
+	}
+	.neofetch span {
+		color: #ff79c6;
+	}
+	.neofetch a {
+		color: inherit;
+	}
+	.colors {
+		display: grid;
+		width: 100%;
+		max-width: 24ch;
+		height: 2em;
+		grid-template-columns: repeat(8, 1fr);
+	}
+
+	.window-container {
+		width: 100%;
+		overflow: hidden;
+		display: block;
+	}
+	.window {
+		float: right;
+		margin: 1rem 0;
+		width: 100%;
+		border: 1px solid var(--window-accent);
+		width: 100%;
+		max-width: 24rem;
+		padding: 0.5rem;
+	}
+	@media screen and (max-width: 400px) {
+		.neofetch {
+			grid-template-columns: none;
+			grid-template-rows: min-content 1fr;
+		}
+		.window {
+			max-width: unset !important;
+		}
+	}
+	.window a {
+		color: var(--window-accent);
+		text-decoration: none;
+	}
+	.window a:hover {
+		text-decoration: underline;
+	}
+
+	.contact-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.contact-list li {
+		display: grid;
+		grid-template-columns: 4rem 1fr;
+		min-width: 0;
+		word-break: break-all;
+	}
+
+	.hidden-until-target {
+		display: none;
+	}
+	.hidden-until-target:target {
+		display: unset;
+	}
+</style>
