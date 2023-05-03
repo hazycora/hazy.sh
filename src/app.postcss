@@ -1,3 +1,5 @@
+@import url('prism.postcss');
+
 *,
 *::before,
 *::after {
@@ -6,6 +8,8 @@
 
 :root {
 	--window-accent: #9f9ffc;
+	--window-accent-muted: #5d5dfa;
+	--bg: #080814;
 
 	--black: #04010e;
 	--red: #ff8080;
@@ -25,9 +29,11 @@
 	--bright-cyan: #a6eaff;
 	--bright-white: #fbe9ff;
 
-	background-color: #080814;
+	background-color: var(--bg);
 	color: #fff;
 	font-family: 'Figtree', Arial, Helvetica, sans-serif;
+	scrollbar-color: var(--window-accent) var(--bg);
+	scrollbar-width: thin;
 }
 
 body {
@@ -46,4 +52,64 @@ h4,
 h5,
 h6 {
 	margin: 0;
+}
+
+.page {
+	position: relative;
+	padding: 1rem;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 60rem;
+}
+
+.monospace {
+	font-family: 'Anonymous Pro', monospace;
+}
+
+nav {
+	font-family: 'Anonymous Pro', monospace;
+	display: flex;
+	gap: 2rem;
+	margin-bottom: 1rem;
+}
+nav a {
+	color: var(--window-accent);
+	text-decoration: none;
+}
+
+article p {
+	margin: 1em 0;
+}
+
+article h1 {
+	font-size: 2em;
+}
+
+article a:link {
+	color: var(--window-accent);
+}
+
+article a:visited {
+	color: var(--window-accent-muted);
+}
+
+.header-link {
+	text-decoration: none;
+}
+
+.header-link::before {
+	color: var(--window-accent);
+	content: '# ';
+}
+
+article iframe {
+	max-height: 30rem;
+}
+
+article img {
+	background-color: var(--black);
+	border: 1px solid var(--window-accent);
+	max-width: 100%;
+	max-height: 25rem;
+	object-fit: contain;
 }
