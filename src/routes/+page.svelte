@@ -98,6 +98,13 @@
 		</div>
 		<div class="shell">
 			<span style="color: var(--magenta)">hazy</span>@hazyarch
+			<span style="color: var(--magenta)">~</span>&gt; ls
+		</div>
+		<div class="shell">
+			<a href="/blog">blog/</a>
+		</div>
+		<div class="shell">
+			<span style="color: var(--magenta)">hazy</span>@hazyarch
 			<span style="color: var(--magenta)">~</span>&gt;
 		</div>
 	</div>
@@ -131,13 +138,6 @@
 </div>
 
 <style>
-	.page {
-		position: relative;
-		padding: 1rem;
-		margin: 0 auto;
-		width: 100%;
-		max-width: 60rem;
-	}
 	.terminal {
 		font-family: 'Anonymous Pro', monospace;
 		line-height: 1;
@@ -162,7 +162,8 @@
 	.neofetch span {
 		color: #ff79c6;
 	}
-	.neofetch a {
+	.neofetch a,
+	.shell a {
 		color: inherit;
 	}
 	.colors {

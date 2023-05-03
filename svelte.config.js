@@ -1,19 +1,36 @@
 import preprocess from 'svelte-preprocess'
 import adapter from '@sveltejs/adapter-static'
+import { mdsvex } from 'mdsvex'
+import slug from 'rehype-slug'
+import autolink from 'rehype-autolink-headings'
+import embed from '@hongvanpc10/rehype-embed'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
-		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
 			pages: 'docs',
 			assets: 'docs'
 		})
 	},
-
+	extensions: ['.svelte', '.md'],
 	preprocess: [
+		mdsvex({
+			extension: '.md',
+			layout: 'src/routes/blog/layout.svelte',
+			rehypePlugins: [
+				slug,
+				[
+					autolink,
+					{
+						properties: {
+							className: 'header-link'
+						}
+					}
+				],
+				embed
+			]
+		}),
 		preprocess({
 			postcss: true
 		})
