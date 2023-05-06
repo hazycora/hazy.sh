@@ -25,7 +25,10 @@
 
 	onMount(() => {
 		lastfm()
-		let lastfmInterval = setInterval(lastfm, 20 * 1000)
+		let lastfmInterval = setInterval(() => {
+			if (document.hidden) return
+			lastfm()
+		}, 20 * 1000)
 		return () => {
 			clearInterval(lastfmInterval)
 		}
