@@ -11,6 +11,8 @@ export async function load() {
 		})
 	)
 	return {
-		posts: files
+		posts: files.sort((a, b) => {
+			return new Date(b.date) - new Date(a.date)
+		})
 	}
 }
