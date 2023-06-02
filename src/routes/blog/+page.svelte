@@ -26,30 +26,64 @@
 	<nav>
 		<a href="/">hazy.sh</a>
 	</nav>
-	<h1>blog</h1>
-	<hr />
+	<div class="top">
+		<h1>blog</h1>
+	</div>
 	<ul class="articles">
 		{#each data.posts as post}
-			<li class="article">
-				<a class="article-title" href={post.path}>{post.title}</a>
-				<p class="article-date">{toLocaleDateString(post.date)}</p>
+			<li>
+				<a href={post.path} class="article">
+					<p class="title" href={post.path}>
+						{post.title}
+					</p>
+					{#if post.contentwarning}
+						<span class="content-warning">CW: {post.contentwarning}</span>
+					{/if}
+					<p class="date">{toLocaleDateString(post.date)}</p>
+				</a>
 			</li>
 		{/each}
 	</ul>
 </div>
 
 <style>
+	.top {
+		background-color: rgba(162, 152, 198, 0.4);
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		display: grid;
+		gap: 0.5rem;
+		border-radius: 8px;
+		margin-bottom: 1em;
+	}
+	.top * {
+		margin: 0;
+	}
 	.articles {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
 		gap: 1rem;
 	}
-	.article-title:link {
-		color: var(--accent);
+	.article {
+		position: relative;
+		height: 100%;
+		color: inherit;
+		text-decoration: none;
+		display: grid;
+		grid-template-rows: 1fr min-content;
+		gap: 0.5rem;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		background-color: rgba(64, 54, 97, 0.4);
 	}
-	.article-title:visited {
-		color: var(--accent-muted);
+	.article .title {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+	.article .date {
+		opacity: 0.5;
 	}
 </style>

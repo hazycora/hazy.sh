@@ -34,10 +34,33 @@
 	font-family: 'Figtree', Arial, Helvetica, sans-serif;
 	scrollbar-color: var(--accent) var(--bg);
 	scrollbar-width: thin;
+	scrollbar-gutter: stable;
 }
 
 body {
 	margin: 0;
+	position: relative;
+	background-color: #9e9ffa;
+	background-image: url('/wallpaper.jpg');
+	background-size: 1920px 1080px;
+	background-size: max(1920px, 100vw) max(1080px, 100vh);
+	background-position: center center;
+	background-attachment: fixed;
+	isolation: isolate;
+	min-height: 100vh;
+	min-height: 100svh;
+}
+
+body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	backdrop-filter: blur(4px);
+	background-color: rgba(9, 5, 20, 0.8);
+	z-index: -1;
 }
 
 pre {
@@ -67,12 +90,15 @@ h6 {
 }
 
 nav {
-	font-family: 'Anonymous Pro', monospace;
 	display: flex;
-	gap: 2rem;
+	gap: 1rem;
 	margin-bottom: 1rem;
 }
+
 nav a {
+	padding: 0.25em 0.5em;
+	background-color: rgba(64, 54, 97, 0.4);
+	border-radius: 0.5rem;
 	color: var(--accent);
 	text-decoration: none;
 }
@@ -123,33 +149,20 @@ article img {
 
 article p:has(> img:only-child) {
 	position: relative;
-	background-color: var(--black);
-	background-image: url('/wallpaper.jpg');
-	background-size: 100vw 100vh;
-	background-position: center center;
+	background-color: rgba(9, 5, 20, 0.8);
 	display: grid;
 	place-items: center;
-	isolation: isolate;
 }
 
 @media screen and (min-width: 600px) {
 	article p:has(> img:only-child) {
-		border-radius: 1em;
+		border-radius: 0.5rem;
 		overflow: hidden;
 		padding: 1rem;
 	}
-}
-
-article p:has(> img:only-child)::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	backdrop-filter: blur(4px);
-	background-color: rgba(9, 5, 20, 0.8);
-	z-index: -1;
+	article p:has(> img:only-child) img {
+		border-radius: 4px;
+	}
 }
 
 iframe[src*='.youtube.com/'] {
@@ -159,41 +172,25 @@ iframe[src*='.youtube.com/'] {
 blockquote {
 	margin: 1em 0;
 	padding: 0.01em 1em;
+	background-color: rgba(9, 5, 20, 0.8);
+	border-radius: 0 0.5rem 0.5rem 0;
 	border-left: 4px solid var(--accent);
 }
 
 .dm {
-	background-color: var(--black);
-	background-image: url('/wallpaper.jpg');
-	background-size: 100vw 100vh;
-	background-position: center center;
-	border-radius: 1em;
-	overflow: hidden;
+	background-color: rgba(9, 5, 20, 0.8);
+	border-radius: 0.5rem;
 	width: 100%;
-	position: relative;
 	margin: 1rem auto;
 	padding: 0.5rem;
-	isolation: isolate;
 }
 
 .dm > div {
 	position: relative;
 	z-index: 2;
-	margin: 0 auto;
+	margin: 0.5rem auto;
 	width: 30rem;
 	max-width: 100%;
-}
-
-.dm::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	background-color: rgba(9, 5, 20, 0.8);
-	backdrop-filter: blur(4px);
-	z-index: 1;
 }
 
 .dm p {
@@ -203,23 +200,32 @@ blockquote {
 	max-width: 100%;
 	max-width: min(100% - 2rem, 20rem);
 	margin: 2px 0;
+}
+
+.dm .received p {
+	margin-inline-end: auto;
 	border-radius: 0 1rem 1rem 0;
 }
 
-.dm p:last-child {
+.dm .received p:last-child {
 	border-bottom-left-radius: 1rem;
 }
 
-.dm p:first-child {
+.dm .received p:first-child {
 	border-top-left-radius: 1rem;
 }
 
-.dm .received > p {
-	margin-inline-end: auto;
-}
-
-.dm .sent > p {
+.dm .sent p {
 	background-color: var(--accent);
 	color: var(--black);
 	margin-inline-start: auto;
+	border-radius: 1rem 0 0 1rem;
+}
+
+.dm .sent p:last-child {
+	border-bottom-right-radius: 1rem;
+}
+
+.dm .sent p:first-child {
+	border-top-right-radius: 1rem;
 }
