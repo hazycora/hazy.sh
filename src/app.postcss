@@ -155,3 +155,71 @@ article p:has(> img:only-child)::before {
 iframe[src*='.youtube.com/'] {
 	background-color: black;
 }
+
+blockquote {
+	margin: 1em 0;
+	padding: 0.01em 1em;
+	border-left: 4px solid var(--window-accent);
+}
+
+.dm {
+	background-color: var(--black);
+	background-image: url('/wallpaper.jpg');
+	background-size: 100vw 100vh;
+	background-position: center center;
+	border-radius: 1em;
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	margin: 1rem auto;
+	padding: 0.5rem;
+	isolation: isolate;
+}
+
+.dm > div {
+	position: relative;
+	z-index: 2;
+	margin: 0 auto;
+	width: 30rem;
+	max-width: 100%;
+}
+
+.dm::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(9, 5, 20, 0.8);
+	backdrop-filter: blur(4px);
+	z-index: 1;
+}
+
+.dm p {
+	padding: 0.5em;
+	background-color: var(--bright-black);
+	width: fit-content;
+	max-width: 100%;
+	max-width: min(100% - 2rem, 20rem);
+	margin: 2px 0;
+	border-radius: 0 1rem 1rem 0;
+}
+
+.dm p:last-child {
+	border-bottom-left-radius: 1rem;
+}
+
+.dm p:first-child {
+	border-top-left-radius: 1rem;
+}
+
+.dm .received > p {
+	margin-inline-end: auto;
+}
+
+.dm .sent > p {
+	background-color: var(--window-accent);
+	color: var(--black);
+	margin-inline-start: auto;
+}
