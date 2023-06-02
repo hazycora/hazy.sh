@@ -7,8 +7,8 @@
 }
 
 :root {
-	--window-accent: #9f9ffc;
-	--window-accent-muted: #5d5dfa;
+	--accent: #9f9ffc;
+	--accent-muted: #5d5dfa;
 	--bg: #080814;
 
 	--black: #04010e;
@@ -32,7 +32,7 @@
 	background-color: var(--bg);
 	color: #fff;
 	font-family: 'Figtree', Arial, Helvetica, sans-serif;
-	scrollbar-color: var(--window-accent) var(--bg);
+	scrollbar-color: var(--accent) var(--bg);
 	scrollbar-width: thin;
 }
 
@@ -73,7 +73,7 @@ nav {
 	margin-bottom: 1rem;
 }
 nav a {
-	color: var(--window-accent);
+	color: var(--accent);
 	text-decoration: none;
 }
 
@@ -94,11 +94,11 @@ article hr {
 }
 
 article a:link {
-	color: var(--window-accent);
+	color: var(--accent);
 }
 
 article a:visited {
-	color: var(--window-accent-muted);
+	color: var(--accent-muted);
 }
 
 .header-link {
@@ -106,7 +106,7 @@ article a:visited {
 }
 
 .header-link::before {
-	color: var(--window-accent);
+	color: var(--accent);
 	content: '# ';
 }
 
@@ -159,7 +159,7 @@ iframe[src*='.youtube.com/'] {
 blockquote {
 	margin: 1em 0;
 	padding: 0.01em 1em;
-	border-left: 4px solid var(--window-accent);
+	border-left: 4px solid var(--accent);
 }
 
 .dm {
@@ -219,7 +219,7 @@ blockquote {
 }
 
 .dm .sent > p {
-	background-color: var(--window-accent);
+	background-color: var(--accent);
 	color: var(--black);
 	margin-inline-start: auto;
 }

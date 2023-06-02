@@ -186,7 +186,7 @@
 		float: right;
 		margin: 1rem 0;
 		width: 100%;
-		border: 1px solid var(--window-accent);
+		border: 1px solid var(--accent);
 		width: 100%;
 		max-width: 24rem;
 		padding: 0.5rem;
@@ -201,7 +201,7 @@
 		}
 	}
 	.window a {
-		color: var(--window-accent);
+		color: var(--accent);
 		text-decoration: none;
 	}
 	.window a:hover {

@@ -47,9 +47,9 @@
 		gap: 1rem;
 	}
 	.article-title:link {
-		color: var(--window-accent);
+		color: var(--accent);
 	}
 	.article-title:visited {
-		color: var(--window-accent-muted);
+		color: var(--accent-muted);
 	}
 </style>
