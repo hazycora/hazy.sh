@@ -20,7 +20,7 @@
 	--cyan: #80e1ff;
 	--white: #f9e0ff;
 
-	--bright-black: #1f1935;
+	--bright-black: #4c4079;
 	--bright-red: #ffa6a6;
 	--bright-green: #b7ffa6;
 	--bright-yellow: #fffea6;
@@ -83,6 +83,14 @@ article p {
 
 article h1 {
 	font-size: 2em;
+	font-weight: 600;
+	font-variation-settings: 'wght' 600;
+	margin-bottom: 0.4em;
+	letter-spacing: 0.05ch;
+}
+
+article hr {
+	margin: 1em 0;
 }
 
 article a:link {
@@ -108,8 +116,42 @@ article iframe {
 
 article img {
 	background-color: var(--black);
-	border: 1px solid var(--window-accent);
 	max-width: 100%;
-	max-height: 25rem;
+	max-height: 100%;
 	object-fit: contain;
+}
+
+article p:has(> img:only-child) {
+	position: relative;
+	background-color: var(--black);
+	background-image: url('/wallpaper.jpg');
+	background-size: 100vw 100vh;
+	background-position: center center;
+	display: grid;
+	place-items: center;
+	isolation: isolate;
+}
+
+@media screen and (min-width: 600px) {
+	article p:has(> img:only-child) {
+		border-radius: 1em;
+		overflow: hidden;
+		padding: 1rem;
+	}
+}
+
+article p:has(> img:only-child)::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	backdrop-filter: blur(4px);
+	background-color: rgba(9, 5, 20, 0.8);
+	z-index: -1;
+}
+
+iframe[src*='.youtube.com/'] {
+	background-color: black;
 }
