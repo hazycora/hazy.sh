@@ -33,13 +33,18 @@
 		{#each data.posts as post}
 			<li>
 				<a href={post.path} class="article">
-					<p class="title" href={post.path}>
-						{post.title}
-					</p>
-					{#if post.contentwarning}
-						<span class="content-warning">CW: {post.contentwarning}</span>
+					{#if post.image}
+						<img src={post.image} alt={post.imageAlt} />
 					{/if}
-					<p class="date">{toLocaleDateString(post.date)}</p>
+					<div class="article-content">
+						<p class="title" href={post.path}>
+							{post.title}
+						</p>
+						{#if post.contentwarning}
+							<span class="content-warning">CW: {post.contentwarning}</span>
+						{/if}
+						<p class="date">{toLocaleDateString(post.date)}</p>
+					</div>
 				</a>
 			</li>
 		{/each}
@@ -68,16 +73,43 @@
 		gap: 1rem;
 	}
 	.article {
+		overflow: hidden;
+		display: grid;
+		align-items: end;
 		position: relative;
 		height: 100%;
 		color: inherit;
 		text-decoration: none;
-		display: grid;
-		grid-template-rows: 1fr min-content;
-		gap: 0.5rem;
 		padding: 0.5rem;
 		border-radius: 0.5rem;
 		background-color: rgba(64, 54, 97, 0.4);
+		isolation: isolate;
+	}
+	.article img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+		mask-image: linear-gradient(
+			to bottom,
+			rgb(0 0 0 / 0.8),
+			rgb(0 0 0 / 0.2) 50%
+		);
+		transition: transform 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	.article:hover img {
+		transform: scale(1.025);
+	}
+	.article-content {
+		display: grid;
+		grid-template-rows: 1fr min-content;
+		gap: 0.5rem;
 	}
 	.article .title {
 		font-size: 1.5rem;
