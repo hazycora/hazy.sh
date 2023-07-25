@@ -70,8 +70,8 @@
 				<span>hazy</span>.<span>sh</span>
 				-------
 				<span>GitHub</span>: <a href="https://github.com/hazycora">@hazycora</a>
-				<span>Bluesky</span>: <a href="https://staging.bsky.app/profile/hazy.gay"
-					>@hazy.gay</a
+				<span>Fedi</span>: <a rel="me" href="https://social.besties.house/@h"
+					>@h@besties.house</a
 				>
 				<span>Twitter</span>: <a href="https://twitter.com/hazycora">@hazycora</a>
 				<span>Pronouns</span>: she/her
@@ -134,6 +134,7 @@
 				<li><strong>email:</strong> hazy@besties.house</li>
 				<li><strong>discord:</strong> hazy#4297</li>
 				<li><strong>matrix:</strong> @h:besties.house</li>
+				<li><strong>fedi:</strong> h@besties.house</li>
 				<li><strong>xmpp:</strong> h@besties.house</li>
 			</ul>
 		</div>
