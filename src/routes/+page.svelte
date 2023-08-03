@@ -4,7 +4,7 @@
 	let lastPlayed
 
 	async function lastfm() {
-		const lastfmUser = 'hazysu'
+		const lastfmUser = 'hazycora'
 		const apiKey = 'a8bf7f8c494de7b6048f9702a737b8fd'
 		const lastfmResponse = await fetch(
 			`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${encodeURIComponent(
