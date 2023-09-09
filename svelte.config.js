@@ -9,8 +9,8 @@ import embed from '@hongvanpc10/rehype-embed'
 const config = {
 	kit: {
 		adapter: adapter({
-			pages: 'docs',
-			assets: 'docs'
+			pages: 'build',
+			assets: 'build'
 		})
 	},
 	extensions: ['.svelte', '.md'],
