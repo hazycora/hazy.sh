@@ -132,7 +132,7 @@
 		<div class="window" style="max-width: 20rem;">
 			<ul class="contact-list">
 				<li><strong>email:</strong> hazy@besties.house</li>
-				<li><strong>discord:</strong> hazy#4297</li>
+				<li><strong>discord:</strong> hazycora</li>
 				<li><strong>matrix:</strong> @h:besties.house</li>
 				<li><strong>fedi:</strong> h@besties.house</li>
 				<li><strong>xmpp:</strong> h@besties.house</li>
