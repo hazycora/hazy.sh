@@ -38,19 +38,22 @@
 <svelte:head>
 	<title>hazy.sh</title>
 	<link rel="preconnect" href="https://ws.audioscrobbler.com/" />
-	<meta name="description" content="hazel cora - student web developer" />
+	<meta
+		name="description"
+		content="i'm hazel - a student web developer who's been making sites since 2019."
+	/>
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="hazy.sh" />
+	<meta property="og:title" content="hazycora" />
 	<meta
 		property="og:description"
-		content="hazel cora - student web developer"
+		content="i'm hazel - a student web developer who's been making sites since 2019."
 	/>
 	<meta property="og:image" content="/avatar.webp" />
 	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:title" content="hazy.sh" />
 	<meta
 		property="twitter:description"
-		content="hazel cora - student web developer"
+		content="i'm hazel - a student web developer who's been making sites since 2019."
 	/>
 	<meta property="twitter:image" content="/avatar.webp" />
 </svelte:head>
