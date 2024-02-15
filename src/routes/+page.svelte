@@ -40,20 +40,20 @@
 	<link rel="preconnect" href="https://ws.audioscrobbler.com/" />
 	<meta
 		name="description"
-		content="i'm hazel - a student web developer who's been making sites since 2019."
+		content="i'm hazel - a web developer who's been making sites since 2019."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="hazycora" />
 	<meta
 		property="og:description"
-		content="i'm hazel - a student web developer who's been making sites since 2019."
+		content="i'm hazel - a web developer who's been making sites since 2019."
 	/>
 	<meta property="og:image" content="/avatar.webp" />
 	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:title" content="hazy.sh" />
 	<meta
 		property="twitter:description"
-		content="i'm hazel - a student web developer who's been making sites since 2019."
+		content="i'm hazel - a web developer who's been making sites since 2019."
 	/>
 	<meta property="twitter:image" content="/avatar.webp" />
 </svelte:head>
@@ -117,12 +117,12 @@
 	<div class="window-container">
 		<div class="window">
 			<p>
-				hi! im <strong>hazel</strong>. i'm a student web developer.
+				hi! im <strong>hazel</strong>. i'm a web developer.
 			</p>
 			<br />
 			<p>
-				i've been coding my own websites since 2019. i work primarily in svelte.
-				i'm also learning golang to work more with backend systems.
+				i've been making my own websites since i was 12. i work primarily in
+				svelte. i'm also learning golang to work more with backend systems.
 			</p>
 			<br />
 			<p>
