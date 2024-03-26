@@ -134,11 +134,36 @@
 	<div class="window-container hidden-until-target" id="contact">
 		<div class="window" style="max-width: 20rem;">
 			<ul class="contact-list">
-				<li><strong>email:</strong> hazy@besties.house</li>
-				<li><strong>discord:</strong> hazycora</li>
-				<li><strong>matrix:</strong> @h:besties.house</li>
-				<li><strong>fedi:</strong> h@besties.house</li>
-				<li><strong>xmpp:</strong> h@besties.house</li>
+				<li>
+					<dl>
+						<dt>email</dt>
+						<dd>hazy@besties.house</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>discord</dt>
+						<dd>hazycora</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>matrix</dt>
+						<dd>@h:besties.house</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>fedi</dt>
+						<dd>h@besties.house</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>xmpp</dt>
+						<dd>h@besties.house</dd>
+					</dl>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -216,12 +241,27 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-	.contact-list li {
 		display: grid;
-		grid-template-columns: 4rem 1fr;
+		grid-template-columns: min-content 1fr;
+		row-gap: 0.25rem;
+		column-gap: 1ch;
 		min-width: 0;
 		word-break: break-all;
+		& li,
+		& dl {
+			display: contents;
+		}
+		& dt {
+			font-weight: bold;
+			white-space: nowrap;
+			&::after {
+				content: ':';
+			}
+		}
+		& dd {
+			margin: 0;
+			white-space: pre-wrap;
+		}
 	}
 
 	.hidden-until-target {
