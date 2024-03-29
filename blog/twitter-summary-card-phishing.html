@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<link rel="stylesheet" href="/fonts/style.css" />
+		<meta name="viewport" content="width=device-width" />
+		
+		<link href="../_app/immutable/assets/app.f3471e19.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/layout.4aa30ce7.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.87430b3f.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.afbbbedd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.069ab3f0.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.f962650b.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.f92b1d3f.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/2.9c195274.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/6.4a9f3a05.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/layout.a3d7aa93.js"><title>Twitter's cards have a bug that makes phishing easy - hazy.sh</title><!-- HEAD_svelte-d8fcqf_START --><link rel="preload" as="image" href="/wallpaper.jpg"><!-- HEAD_svelte-d8fcqf_END --><!-- HEAD_svelte-1sw70dk_START --><link rel="preconnect" href="https://ws.audioscrobbler.com/"><meta name="description" content="Sites linked to on Twitter can pretend to be any other URL"><meta property="og:type" content="article"><meta property="og:title" content="Twitter's cards have a bug that makes phishing easy - hazy.sh"><meta property="og:description" content="Sites linked to on Twitter can pretend to be any other URL"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:title" content="Twitter's cards have a bug that makes phishing easy - hazy.sh"><meta name="twitter:site" content="@hazycora"><meta property="twitter:description" content="Sites linked to on Twitter can pretend to be any other URL"><meta property="og:image" content="/assets/twitter-summary-card-phishing/card-example.png">
+		<meta property="og:image:alt" content="A Tweet displaying a summary card linking to discord.com">
+		<meta property="twitter:image" content="/assets/twitter-summary-card-phishing/card-example.png">
+		<meta property="twitter:image:alt" content="A Tweet displaying a summary card linking to discord.com"><!-- HEAD_svelte-1sw70dk_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+
+
+
+
+<div class="page"><nav><a href="/">hazy.sh</a>
+		<a href="/blog">other blog posts</a></nav>
+	<article class="svelte-1d6pvn1"><div class="article-top svelte-1d6pvn1"><img src="/assets/twitter-summary-card-phishing/card-example.png" alt="A Tweet displaying a summary card linking to discord.com" class="svelte-1d6pvn1">
+			<div class="article-top-content svelte-1d6pvn1"><h1 class="svelte-1d6pvn1">Twitter's cards have a bug that makes phishing easy</h1>
+				
+				<time itemprop="datePublished" datetime="2023-06-03T00:00:00.000Z" class="svelte-1d6pvn1">June 3, 2023</time></div></div>
+		<p>(I’m not the first to find this problem. It’s been known since 2019, I link to other articles and blog posts that came before me at the end.)</p>
+<p>When you link to something at the end of a Tweet, the link isn’t displayed. Instead, you’ll only see a “summary card” Twitter generates when a post is made. The domain name of the URL is displayed in these cards, so at face value they don’t make phishing easier.</p>
+<p><img src="/assets/twitter-summary-card-phishing/card-example-domain-highlighted.png" alt="A Tweet displaying a summary card linking to discord.com"></p>
+<h2 id="their-implementation-is-not-perfect"><a class="header-link" href="#their-implementation-is-not-perfect"><span class="icon icon-link"></span></a>their implementation is Not Perfect</h2>
+<p>If a link redirects to another page, Twitter follows that redirect and displays the domain name of the destination instead of the original URL. This is fine, it means the cards will reflect the same page users will see.
+But the user isn’t sent directly to the destination- When someone clicks one of these cards, they go to the original URL. For typical redirect links, that’s okay, because the redirect Twitter experiences will we the same as the user’s redirect. But what if a malicious site serves a different redirect to users than to Twitter?</p>
+<p>When Twitter fetches the page content in order to generate these cards, they set the HTTP “User-Agent” header to begin with “Twitterbot/”, so it can be detected on our website that the request was for Twitter. Setting custom User-Agents for things like this is normal, it means sites can customise the text of embeds for specific sites if necessary or block Twitter from making these requests if desired, but for malicious sites it also allows us to exploit this issue reliably.</p>
+<p>Here’s an example of an ExpressJS route that detects Twitter and redirects to discord.com, while redirecting to example.com for everyone else:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">const</span> detectedTwitter <span class="token operator">=</span> req<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'user-agent'</span><span class="token punctuation">]</span>
+		<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'Twitterbot/'</span><span class="token punctuation">)</span>
+
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>detectedTwitter<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token comment">// redirect to the page to be displayed on Twitter</span>
+		res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'https://discord.com'</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">&#125;</span>
+
+	<span class="token comment">// handle request for other users</span>
+	<span class="token comment">// malicious sites could serve a phishing site right here</span>
+	res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'https://example.com'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre>
+<p><img src="/assets/twitter-summary-card-phishing/demo.gif" alt="An animated GIF showing a Tweet that looks to contain a link to Discord, but sends users to example.com instead"></p>
+<h2 id="this-issue-is-old"><a class="header-link" href="#this-issue-is-old"><span class="icon icon-link"></span></a>this issue is old</h2>
+<p>Twitter has had this issue for years, and I’m by no means the first to notice it. It’s <a href="https://shkspr.mobi/blog/2019/03/scammers-abusing-twitter-cards-via-redirects/" rel="nofollow">been known since 2019</a> at the latest. My friend <a href="https://twitter.com/1lexxi" rel="nofollow">Lexi</a> found the same issue a couple years ago, and she told me it reported this to Twitter through HackerOne, but the exploit still hasn’t been fixed.</p>
+<div class="dm"><div class="received"><p>twitters bbp is a joke, fixing things is not their strong suit</p></div>
+<div class="sent"><p>Lmao</p></div></div>
+<p>BleepingComputer <a href="https://www.bleepingcomputer.com/news/security/twitter-can-be-tricked-into-showing-misleading-embedded-links/" rel="nofollow">wrote on this in 2019</a> and contacted Twitter about it, to no response.</p>
+<blockquote><p>BleepingComputer reached out to Twitter for a statement about this problem and if it would be fixed in the near future but received no reply at the time of publishing.</p></blockquote>
+<p>Hopefully Twitter realises the severity of this problem. Be careful when clicking links- the suggestion to check URLs before clicking is a good one, but it’s not infallible!</p></article>
+</div>
+
+
+			
+			<script>
+				{
+					__sveltekit_1yff8ho = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [{"type":"data","data":null,"uses":{}},{"type":"data","data":null,"uses":{}},null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.87430b3f.js"),
+						import("../_app/immutable/entry/app.f962650b.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
