@@ -129,6 +129,8 @@
 				i'm always looking for projects to work on! if you'd like to work with
 				me please <a href="#contact">send me a message</a> :&rpar;
 			</p>
+			<br />
+			<p><a href="https://git.gay/h/hazysh">source code</a></p>
 		</div>
 	</div>
 	<div class="window-container hidden-until-target" id="contact">
