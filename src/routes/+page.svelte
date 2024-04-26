@@ -75,17 +75,14 @@
 					>@h@besties.house</a
 				>
 				<span>Twitter</span>: <a href="https://twitter.com/hazycora">@hazycora</a>
-				<span>Pronouns</span>: she/her
-				{#if spotifyActivity}
+				<span>Pronouns</span>: she/her{#if spotifyActivity}
 					<span
 						><SpotifyIcon
 							alt="Spotify"
 							style="vertical-align: bottom;"
 							height="1lh"
 						/></span
-					> {spotifyActivity.details} by {spotifyActivity.state}
-				{/if}
-				{#if codeActivity}
+					> {spotifyActivity.details} by {spotifyActivity.state}{/if}{#if codeActivity}
 					<span
 						><CodeIcon
 							alt="Visual Studio Code"
@@ -94,7 +91,7 @@
 						/></span
 					> {codeActivity.details}
 				{/if}
-	
+
 				<div class="colors" aria-hidden="true">
 					<div style="background-color: var(--black)" />
 					<div style="background-color: var(--red)" />
