@@ -91,7 +91,7 @@
 						/></span
 					> {codeActivity.details}
 				{/if}
-
+				
 				<div class="colors" aria-hidden="true">
 					<div style="background-color: var(--black)" />
 					<div style="background-color: var(--red)" />
@@ -109,9 +109,10 @@
 					<div style="background-color: var(--bright-magenta)" />
 					<div style="background-color: var(--bright-cyan)" />
 					<div style="background-color: var(--bright-white)" />
-				</div>
-			</pre>
+				</div><!--
+			--></pre>
 		</div>
+		<br />
 		<div class="shell">
 			<span style="color: var(--magenta)">hazy</span>@hazyarch
 			<span style="color: var(--magenta)">~</span>&gt; ls
