@@ -75,20 +75,26 @@
 		margin-bottom: 1em;
 		overflow: hidden;
 		position: relative;
+		display: grid;
 	}
 	.article-top img {
 		display: block;
 		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		grid-area: 1 / -1;
 	}
 	.article-top-content {
 		padding: 0.5rem;
 		display: grid;
 		gap: 0.5rem;
+		grid-area: 1 / -1;
 	}
 	.article-top:has(img) .article-top-content {
-		position: absolute;
-		bottom: 0;
+		position: relative;
 		isolation: isolate;
+		height: fit-content;
+		align-self: end;
 	}
 	.article-top:has(img) .article-top-content::before {
 		content: '';
