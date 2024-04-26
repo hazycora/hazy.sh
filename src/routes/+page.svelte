@@ -1,36 +1,34 @@
 <script>
 	import { onMount } from 'svelte'
+	import SpotifyIcon from '$lib/icons/spotify.svg'
+	import CodeIcon from '$lib/icons/vscode.svg'
 
-	let lastPlayed
-
-	async function lastfm() {
-		const lastfmUser = 'hazycora'
-		const apiKey = 'a8bf7f8c494de7b6048f9702a737b8fd'
-		const lastfmResponse = await fetch(
-			`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${encodeURIComponent(
-				lastfmUser
-			)}&api_key=${encodeURIComponent(apiKey)}&format=json&limit=1`
-		)
-		const lastfmRecentTrack = (await lastfmResponse.json()).recenttracks
-			?.track[0]
-		if (!lastfmRecentTrack) {
-			lastPlayed = null
-		}
-		if (!lastfmRecentTrack['@attr']?.nowplaying) return
-		lastPlayed = {
-			artist: lastfmRecentTrack.artist['#text'],
-			song: lastfmRecentTrack.name
-		}
-	}
+	let spotifyActivity
+	let codeActivity
 
 	onMount(() => {
-		lastfm()
-		let lastfmInterval = setInterval(() => {
-			if (document.hidden) return
-			lastfm()
-		}, 20 * 1000)
+		let socket = new WebSocket(
+			'wss://3000.besties.house/users/728131016392441916'
+		)
+		let unmounted = false
+		socket.addEventListener('message', async event => {
+			const data = JSON.parse(event.data)
+			spotifyActivity = data.activities?.find(activity => activity.type == 2)
+			codeActivity = data.activities?.find(
+				activity => activity.application_id == '782685898163617802'
+			)
+		})
+		socket.addEventListener('close', () => {
+			spotifyActivity = null
+			codeActivity = null
+			if (unmounted) return
+			socket = new WebSocket(
+				'wss://3000.besties.house/users/728131016392441916'
+			)
+		})
 		return () => {
-			clearInterval(lastfmInterval)
+			unmounted = true
+			socket.close()
 		}
 	})
 </script>
@@ -78,8 +76,23 @@
 				>
 				<span>Twitter</span>: <a href="https://twitter.com/hazycora">@hazycora</a>
 				<span>Pronouns</span>: she/her
-				{#if lastPlayed}
-					<span>Listening to</span>: {lastPlayed.song} by {lastPlayed.artist}
+				{#if spotifyActivity}
+					<span
+						><SpotifyIcon
+							alt="Spotify"
+							style="vertical-align: bottom;"
+							height="1lh"
+						/></span
+					> {spotifyActivity.details} by {spotifyActivity.state}
+				{/if}
+				{#if codeActivity}
+					<span
+						><CodeIcon
+							alt="Visual Studio Code"
+							style="vertical-align: bottom;"
+							height="1lh"
+						/></span
+					> {codeActivity.details}
 				{/if}
 	
 				<div class="colors" aria-hidden="true">
@@ -176,11 +189,12 @@
 		font-family: 'Anonymous Pro', monospace;
 		line-height: 1;
 		margin-bottom: 2rem;
+		word-break: break-word;
 	}
 	pre {
 		margin: 0;
 		white-space: pre-line;
-		word-break: break-all;
+		word-break: break-word;
 	}
 	.pfp {
 		width: 10em;
