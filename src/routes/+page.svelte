@@ -66,6 +66,7 @@
 				aria-hidden="true"
 				alt=""
 				class="pfp"
+				draggable="false"
 			/>
 			<pre class="neofetch__text">
 				<span>hazy</span>.<span>sh</span>
@@ -207,6 +208,7 @@
 		width: 10em;
 		max-width: 100%;
 		height: unset;
+		user-select: none;
 	}
 	.neofetch {
 		color: var(--white);
