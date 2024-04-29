@@ -130,15 +130,24 @@
 			<p>
 				hi! im <strong>hazel</strong>. i'm a web developer.
 			</p>
-			<br />
 			<p>
-				i've been making my own websites since i was 12. i work primarily in
-				svelte. i'm also learning golang to work more with backend systems.
+				i've been making websites since i was 12. i code primarily in golang,
+				typescript, and svelte.
 			</p>
 			<br />
 			<p>
-				i'm always looking for projects to work on! if you'd like to work with
-				me please <a href="#contact">send me a message</a> :&rpar;
+				currently i maintain and develop open source projects @ <a
+					href="https://besties.house">besties.house</a
+				>
+				including the source code forge <a href="https://git.gay">git.gay</a>
+				and our static site host
+				<a href="https://pages.gay">pages.gay</a> (which this site is hosted on!)
+			</p>
+			<br />
+			<p>
+				i also do freelance! if you've got a project i could be a good fit for, <a
+					href="#contact">send me a message</a
+				> :&rpar;
 			</p>
 			<br />
 			<p><a href="https://git.gay/h/hazysh">source code</a></p>
