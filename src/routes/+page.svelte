@@ -70,20 +70,19 @@
 			<pre class="neofetch__text">
 				<span>hazy</span>.<span>sh</span>
 				-------
-				<span>GitHub</span>: <a href="https://github.com/hazycora">@hazycora</a>
-				<span>Fedi</span>: <a rel="me" href="https://social.besties.house/@h"
+				<span>git.gay</span>: <a href="https://git.gay/h">@h</a>
+				<span>fedi</span>: <a rel="me" href="https://social.besties.house/@h"
 					>@h@besties.house</a
 				>
-				<span>Twitter</span>: <a href="https://twitter.com/hazycora">@hazycora</a>
-				<span>Pronouns</span>: she/her{#if spotifyActivity}
+				<span>pronouns</span>: she/her{#if spotifyActivity}
 					<span
 						><SpotifyIcon
 							alt="Spotify"
 							style="vertical-align: bottom;"
 							height="1lh"
 						/></span
-					> {spotifyActivity.details}{#if spotifyActivity.state}
-						by {spotifyActivity.state}{/if}{/if}{#if codeActivity}
+					> {spotifyActivity.details}{#if spotifyActivity.state}<!--
+					--> by {spotifyActivity.state}{/if}{/if}{#if codeActivity}
 					<span
 						><CodeIcon
 							alt="Visual Studio Code"
