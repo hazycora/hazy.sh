@@ -82,7 +82,8 @@
 							style="vertical-align: bottom;"
 							height="1lh"
 						/></span
-					> {spotifyActivity.details} by {spotifyActivity.state}{/if}{#if codeActivity}
+					> {spotifyActivity.details}{#if spotifyActivity.state}
+						by {spotifyActivity.state}{/if}{/if}{#if codeActivity}
 					<span
 						><CodeIcon
 							alt="Visual Studio Code"
