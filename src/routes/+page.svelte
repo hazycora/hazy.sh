@@ -237,8 +237,8 @@
 		display: block;
 	}
 	.window {
-		float: right;
 		margin: 1rem 0;
+		margin-inline-start: auto;
 		width: 100%;
 		border: 1px solid var(--accent);
 		width: 100%;
