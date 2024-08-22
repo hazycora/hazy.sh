@@ -54,6 +54,7 @@
 		content="i'm hazel - a web developer who's been making sites since 2019."
 	/>
 	<meta property="twitter:image" content="/avatar.webp" />
+	<link rel="pgpkey" href="/key.asc" />
 </svelte:head>
 
 <div class="page">
@@ -71,7 +72,7 @@
 			<pre class="neofetch__text">
 				<span>hazy</span>.<span>sh</span>
 				-------
-				<span>git.gay</span>: <a href="https://git.gay/h">@h</a>
+				<span>git.gay</span>: <a rel="me" href="https://git.gay/h">@h</a>
 				<span>fedi</span>: <a rel="me" href="https://social.besties.house/@h"
 					>@h@besties.house</a
 				>
@@ -185,6 +186,12 @@
 					<dl>
 						<dt>xmpp</dt>
 						<dd>h@besties.house</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>keyoxide</dt>
+						<dd><a rel="me" href="https://keyoxide.org/h@besties.house">78f2d587b07ccef764249c2377b7fdd77fd16f6d</a></dd>
 					</dl>
 				</li>
 			</ul>
