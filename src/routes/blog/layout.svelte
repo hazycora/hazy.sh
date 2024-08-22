@@ -67,6 +67,7 @@
 <style>
 	article {
 		margin-bottom: min(25vh, 20rem);
+		overflow-wrap: break-word;
 	}
 	.article-top {
 		background-color: rgba(162, 152, 198, 0.4);
