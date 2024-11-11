@@ -45,7 +45,7 @@ Another interesting quirk is that some words in the list end with a space. This 
 
 So, as I said in the disclaimer, I believe this list was certainly just copy-pasted from somewhere online. But where? I don't
 actually know where _exactly_ they found it, but I've got a pretty big lead. Searching Google for profanity lists, I stumbled upon
-`bad-words.txt`, which includes many of these same words. It also includes many more words, though, so Webfishing's developers either tried to
+[`bad-words.txt`](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt), which includes many of these same words. It also includes many more words, though, so Webfishing's developers either tried to
 manually sort through the list and didn't catch enough things, or they found a different version of this list.
 
 The feature was added in the very last update, [Patch 1.09](https://store.steampowered.com/news/app/3146520/view/4467101633890746444), and I don't doubt it'll get fixed soon enough :)
