@@ -13,7 +13,7 @@ had a chat filter option turned on. But there are some strange outliers!
 
 <div style="font-size: 1.25rem">
 
-**Before I continue:** The profanity list is very clearly sourced from some online list. I don't think the developers of Webfishing
+**Before I continue:** The profanity list is very clearly sourced from some online list. I don't think the developer of Webfishing
 made this list themselves or thoroughly checked it. These quirks are certainly a mistake. Do not interpret any of this as malice or bias.
 
 </div>
@@ -45,7 +45,7 @@ Another interesting quirk is that some words in the list end with a space. This 
 
 So, as I said in the disclaimer, I believe this list was certainly just copy-pasted from somewhere online. But where? I don't
 actually know where _exactly_ they found it, but I've got a pretty big lead. Searching Google for profanity lists, I stumbled upon
-[`bad-words.txt`](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt), which includes many of these same words. It also includes many more words, though, so Webfishing's developers either tried to
+[`bad-words.txt`](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt), which includes many of these same words. It also includes many more words, though, so Webfishing's developer either tried to
 manually sort through the list and didn't catch enough things, or they found a different version of this list.
 
 The feature was added in the very last update, [Patch 1.09](https://store.steampowered.com/news/app/3146520/view/4467101633890746444), and I don't doubt it'll get fixed soon enough :)
