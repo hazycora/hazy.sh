@@ -4,6 +4,11 @@ description: Canadians are being CENSORED by the adorable furry fishing game
 date: 2024-11-11
 ---
 
+**Update:** The developer, lamedev, [knows of this](https://lethallava.land/notes/a0hatpsc0g)! I expect it'll be fixed in the next update. Also, my guess for the source of the list [was correct](https://lethallava.land/notes/a0hayv2l1n).
+This post will remain as a curiosity :)
+
+---
+
 My friend [Astra](https://astroorbis.com) was looking around a decompiled version of Webfishing--giving her access to some of
 the source code and assets of the game--when she found the profanity list used by the recently-added chat filter. I've uploaded
 this file as [a GitHub Gist](https://gist.github.com/hazycora/f7fde1be74022d196945577a1817d153).
@@ -24,6 +29,7 @@ list to sift through!
 - arab
 - canadian
 - ethiopian
+- german
 - mexican
 - palestinian
 - israeli
