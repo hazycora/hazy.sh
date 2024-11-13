@@ -26,7 +26,7 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta name="fediverse:creator" content="@h@social.besties.house" />
+	<meta name="fediverse:creator" content="@h@besties.house" />
 	<meta
 		property="twitter:card"
 		content={image ? 'summary_large_image' : 'summary'}
