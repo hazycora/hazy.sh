@@ -22,15 +22,17 @@
 	<title>{title} - hazy.sh</title>
 	<link rel="preconnect" href="https://ws.audioscrobbler.com/" />
 	<meta name="description" content={description} />
+	<meta property="og:site_name" content="hazy.sh" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="{title} - hazy.sh" />
+	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
+	<meta name="fediverse:creator" content="@h@social.besties.house" />
 	<meta
 		property="twitter:card"
 		content={image ? 'summary_large_image' : 'summary'}
 	/>
-	<meta property="twitter:title" content="{title} - hazy.sh" />
-	<meta name="twitter:site" content="@hazycora" />
+	<meta property="twitter:title" content={title} />
+	<meta property="twitter:site" content="@hazycora" />
 	<meta property="twitter:description" content={description} />
 	{#if image}
 		<meta property="og:image" content={image} />
