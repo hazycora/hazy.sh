@@ -191,7 +191,11 @@
 				<li>
 					<dl>
 						<dt>keyoxide</dt>
-						<dd><a rel="me" href="https://keyoxide.org/h@besties.house">78f2d587b07ccef764249c2377b7fdd77fd16f6d</a></dd>
+						<dd>
+							<a rel="me" href="https://keyoxide.org/h@besties.house"
+								>78f2d587b07ccef764249c2377b7fdd77fd16f6d</a
+							>
+						</dd>
 					</dl>
 				</li>
 			</ul>

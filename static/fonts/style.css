@@ -16,7 +16,8 @@
 
 @font-face {
 	font-family: 'uushi';
-	src: url('/fonts/uushimedium.woff2') format('woff2'),
+	src:
+		url('/fonts/uushimedium.woff2') format('woff2'),
 		url('/fonts/uushimedium.woff') format('woff');
 	font-weight: 500;
 	font-style: normal;
@@ -25,7 +26,8 @@
 
 @font-face {
 	font-family: 'Anonymous Pro';
-	src: url('/fonts/AnonymousPro-Regular.woff2') format('woff2'),
+	src:
+		url('/fonts/AnonymousPro-Regular.woff2') format('woff2'),
 		url('/fonts/AnonymousPro-Regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
@@ -34,7 +36,8 @@
 
 @font-face {
 	font-family: 'Anonymous Pro';
-	src: url('/fonts/AnonymousPro-Italic.woff2') format('woff2'),
+	src:
+		url('/fonts/AnonymousPro-Italic.woff2') format('woff2'),
 		url('/fonts/AnonymousPro-Italic.woff') format('woff');
 	font-weight: normal;
 	font-style: italic;
@@ -43,7 +46,8 @@
 
 @font-face {
 	font-family: 'Anonymous Pro';
-	src: url('/fonts/AnonymousPro-Bold.woff2') format('woff2'),
+	src:
+		url('/fonts/AnonymousPro-Bold.woff2') format('woff2'),
 		url('/fonts/AnonymousPro-Bold.woff') format('woff');
 	font-weight: bold;
 	font-style: normal;
@@ -52,7 +56,8 @@
 
 @font-face {
 	font-family: 'Anonymous Pro';
-	src: url('/fonts/AnonymousPro-BoldItalic.woff2') format('woff2'),
+	src:
+		url('/fonts/AnonymousPro-BoldItalic.woff2') format('woff2'),
 		url('/fonts/AnonymousPro-BoldItalic.woff') format('woff');
 	font-weight: bold;
 	font-style: italic;
