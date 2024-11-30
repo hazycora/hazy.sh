@@ -12,6 +12,12 @@
 </script>
 
 <svelte:head>
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title="hazy's blog's RSS feed"
+		href="/rss/"
+	/>
 	<link rel="preload" as="image" href="/wallpaper.jpg" />
 </svelte:head>
 
