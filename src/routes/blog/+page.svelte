@@ -1,121 +1,93 @@
-<script>
-	export let data
+<script lang="ts">
+	import ArticleItem from '$lib/components/ArticleItem.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
+	import Postscript from '$lib/components/Postscript.svelte'
 
-	function toLocaleDateString(date) {
-		return new Date(date).toLocaleDateString(undefined, {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		})
-	}
+	export let data
 </script>
 
-<svelte:head>
-	<title>blog - hazy.sh</title>
-	<link rel="preconnect" href="https://ws.audioscrobbler.com/" />
-	<meta name="description" content="hazel's blog for whatever" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="blog - hazy.sh" />
-	<meta property="og:description" content="hazel's blog for whatever" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="blog - hazy.sh" />
-	<meta name="twitter:description" content="hazel's blog for whatever" />
-</svelte:head>
+<MetaTags
+	value={{
+		title: "hazel's blog",
+		description: "hazel's blog for whatever",
+		image: '/avatar.webp'
+	}}
+/>
 
-<div class="page">
+<main>
 	<nav>
-		<a href="/">hazy.sh</a>
+		<a href="/">hazel cora</a> · <a href="/blog">blog</a>
 	</nav>
-	<div class="top">
-		<h1>blog</h1>
-	</div>
-	<ul class="articles">
-		{#each data.posts as post}
+
+	<p>
+		Occasionally I write about the things I'm making, my experiences, and other
+		things I find interesting.
+	</p>
+	<p>
+		The blog doesn't have any sort of schedule, so if you want to be sure to
+		catch the next post you should <a href="https://social.besties.house/@h"
+			>follow me on the fediverse</a
+		>
+		or subscribe to <a href="/rss">the blog's RSS feed</a>!
+	</p>
+
+	<ul>
+		{#each data.posts as post, i}
 			<li>
-				<a href={post.path} class="article">
-					{#if post.image}
-						<img src={post.image} alt={post.imageAlt} />
-					{/if}
-					<div class="article-content">
-						<p class="title" href={post.path}>
-							{post.title}
-						</p>
-						{#if post.contentwarning}
-							<span class="content-warning">CW: {post.contentwarning}</span>
-						{/if}
-						<p class="date">{toLocaleDateString(post.date)}</p>
-					</div>
-				</a>
+				<ArticleItem {post} highlight={i === 0} />
 			</li>
 		{/each}
 	</ul>
-</div>
 
-<style>
-	.top {
-		background-color: rgba(162, 152, 198, 0.4);
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		display: grid;
-		gap: 0.5rem;
-		border-radius: 8px;
-		margin-bottom: 1em;
+	<hr />
+
+	<Postscript />
+</main>
+
+<style lang="postcss">
+	main {
+		max-width: var(--page-max-width);
+		margin-block: 2rem;
+		margin-inline: auto;
+		padding: var(--page-padding);
 	}
-	.top * {
-		margin: 0;
+	nav {
+		color: var(--emphasis-clr);
+		font-weight: 600;
+
+		a {
+			color: var(--accent-clr);
+			text-decoration: none;
+
+			padding-inline: 0.25rem;
+			margin-inline: -0.25rem;
+			border-radius: 0.5rem;
+			&:hover {
+				background-color: var(--elevated-hover-clr);
+			}
+		}
 	}
-	.articles {
-		margin: 0;
-		padding: 0;
+	p {
+		margin-block: 1rem;
+		color: var(--text-muted-clr);
+		&:first-of-type {
+			font-size: 1.25rem;
+			font-weight: 500;
+			color: inherit;
+		}
+	}
+	ul {
 		list-style: none;
+		padding: 0;
+		margin: 2rem 0;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-		gap: 1rem;
+		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+		gap: 0.75rem;
 	}
-	.article {
-		overflow: hidden;
-		display: grid;
-		align-items: end;
-		position: relative;
+	li {
 		height: 100%;
-		color: inherit;
-		text-decoration: none;
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		background-color: rgba(64, 54, 97, 0.4);
-		isolation: isolate;
-	}
-	.article img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		z-index: -1;
-		mask-image: linear-gradient(
-			to bottom,
-			rgb(0 0 0 / 0.8),
-			rgb(0 0 0 / 0.2) 50%
-		);
-		transition: transform 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
-	}
-	.article:hover img {
-		transform: scale(1.025);
-	}
-	.article-content {
-		display: grid;
-		grid-template-rows: 1fr min-content;
-		gap: 0.5rem;
-	}
-	.article .title {
-		font-size: 1.5rem;
-		font-weight: bold;
-	}
-	.article .date {
-		opacity: 0.5;
+		:global(> *) {
+			height: 100%;
+		}
 	}
 </style>

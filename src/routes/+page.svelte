@@ -1,309 +1,253 @@
-<script>
-	import { onMount } from 'svelte'
-	import SpotifyIcon from '$lib/icons/spotify.svg'
-	import CodeIcon from '$lib/icons/vscode.svg'
+<script lang="ts">
+	import Avatar from '$lib/components/Avatar.svelte'
+	import MetaTags from '$lib/components/MetaTags.svelte'
+	import SidebarPosts from '$lib/components/SidebarPosts.svelte'
+	import Social from '$lib/components/Social.svelte'
 
-	let spotifyActivity
-	let codeActivity
+	const { data } = $props()
 
-	onMount(() => {
-		let socket = new WebSocket(
-			'wss://3000.besties.house/users/728131016392441916'
-		)
-		let unmounted = false
-		socket.addEventListener('message', async event => {
-			const data = JSON.parse(event.data)
-			spotifyActivity = data.activities?.find(activity => activity.type == 2)
-			codeActivity = data.activities?.find(
-				activity => activity.application_id == '782685898163617802'
-			)
-		})
-		socket.addEventListener('close', () => {
-			spotifyActivity = null
-			codeActivity = null
-			if (unmounted) return
-			socket = new WebSocket(
-				'wss://3000.besties.house/users/728131016392441916'
-			)
-		})
-		return () => {
-			unmounted = true
-			socket.close()
+	const socials: {
+		name: string
+		url: string
+		handle: string
+		relMe?: boolean
+	}[] = [
+		{
+			name: 'mastodon',
+			url: 'https://social.besties.house/@h',
+			handle: '@h@besties.house',
+			relMe: true
+		},
+		{
+			name: 'git',
+			url: 'https://git.gay/h',
+			handle: 'git.gay/h'
+		},
+		{
+			name: 'github',
+			url: 'https://github.com/hazycora',
+			handle: '@hazycora'
+		},
+		{
+			name: 'discord',
+			url: 'https://discord.com/users/728131016392441916',
+			handle: '@hazycora'
+		},
+		{
+			name: 'liberapay',
+			url: 'https://liberapay.com/hazy',
+			handle: '@hazy'
+		},
+		{
+			name: 'kofi',
+			url: 'https://ko-fi.com/hazy',
+			handle: '@hazy'
 		}
-	})
+	]
 </script>
 
+<MetaTags
+	value={{
+		title: 'hazel cora',
+		description: 'Hi<3',
+		image: '/avatar.webp'
+	}}
+/>
+
 <svelte:head>
-	<title>hazy.sh</title>
 	<link rel="preconnect" href="https://ws.audioscrobbler.com/" />
-	<meta
-		name="description"
-		content="i'm hazel - a web developer who's been making sites since 2019."
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="hazycora" />
-	<meta
-		property="og:description"
-		content="i'm hazel - a web developer who's been making sites since 2019."
-	/>
-	<meta property="og:image" content="/avatar.webp" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="hazy.sh" />
-	<meta
-		name="twitter:description"
-		content="i'm hazel - a web developer who's been making sites since 2019."
-	/>
-	<meta name="twitter:image" content="/avatar.webp" />
-	<link rel="pgpkey" href="/key.asc" />
+	<link rel="pgpkey" href="/public.key" />
 </svelte:head>
 
-<div class="page">
-	<div class="terminal">
-		<div class="neofetch">
-			<img
-				src="/avatar.webp"
-				width="160"
-				height="160"
-				aria-hidden="true"
-				alt=""
-				class="pfp"
-				draggable="false"
-			/>
-			<pre class="neofetch__text">
-				<span>hazy</span>.<span>sh</span>
-				-------
-				<span>git.gay</span>: <a rel="me" href="https://git.gay/h">@h</a>
-				<span>fedi</span>: <a rel="me" href="https://social.besties.house/@h"
-					>@h@besties.house</a
-				>
-				<span>pronouns</span>: she/her{#if spotifyActivity}
-					<span
-						><SpotifyIcon
-							alt="Spotify"
-							style="vertical-align: bottom;"
-							height="1lh"
-						/></span
-					> {spotifyActivity.details}{#if spotifyActivity.state}<!--
-					--> by {spotifyActivity.state}{/if}{/if}{#if codeActivity}
-					<span
-						><CodeIcon
-							alt="Visual Studio Code"
-							style="vertical-align: bottom;"
-							height="1lh"
-						/></span
-					> {codeActivity.details}
-				{/if}
-				
-				<div class="colors" aria-hidden="true">
-					<div style="background-color: var(--black)" />
-					<div style="background-color: var(--red)" />
-					<div style="background-color: var(--green)" />
-					<div style="background-color: var(--yellow)" />
-					<div style="background-color: var(--blue)" />
-					<div style="background-color: var(--magenta)" />
-					<div style="background-color: var(--cyan)" />
-					<div style="background-color: var(--white)" />
-					<div style="background-color: var(--bright-black)" />
-					<div style="background-color: var(--bright-red)" />
-					<div style="background-color: var(--bright-green)" />
-					<div style="background-color: var(--bright-yellow)" />
-					<div style="background-color: var(--bright-blue)" />
-					<div style="background-color: var(--bright-magenta)" />
-					<div style="background-color: var(--bright-cyan)" />
-					<div style="background-color: var(--bright-white)" />
-				</div><!--
-			--></pre>
-		</div>
-		<br />
-		<div class="shell">
-			<span style="color: var(--magenta)">hazy</span>@hazyarch
-			<span style="color: var(--magenta)">~</span>&gt; ls
-		</div>
-		<div class="shell">
-			<a href="/blog">blog/</a>
-		</div>
-		<div class="shell">
-			<span style="color: var(--magenta)">hazy</span>@hazyarch
-			<span style="color: var(--magenta)">~</span>&gt;
-		</div>
+<main>
+	<div>
+		<article>
+			<h1>hazel cora <span class="pronouns">(she/her)</span></h1>
+			<p>Hi, I'm Hazel&lt;3</p>
+			<p>
+				I'm a developer with experience in Go, TypeScript, and Svelte. I'm part
+				of the coder collective <a href="https://besties.house">besties</a>
+				and manage its servers and maintain its projects. As part of besties, I run
+				our git forge
+				<a href="https://git.gay">git.gay</a>
+				and our website hosting service
+				<a href="https://pages.gay">pages.gay</a>.
+			</p>
+			<p>I also do freelance web development, you should reach out!</p>
+		</article>
+
+		<h2>Projects</h2>
+		<ul class="projects">
+			<li>
+				<a href="https://pages.gay">
+					<img src="/assets/gitgay.svg" aria-hidden="true" alt="" />
+					<span class="title">pages.gay</span>
+					<p>a free website hosting service</p>
+					<span class="time-span">2023 -</span>
+				</a>
+			</li>
+			<li>
+				<a href="https://git.gay">
+					<img src="/assets/gitgay.svg" aria-hidden="true" alt="" />
+					<span class="title">git.gay</span>
+					<p>a git forge for queer developers</p>
+					<span class="time-span">2022 -</span>
+				</a>
+			</li>
+			<li>
+				<a href="https://besties.house">
+					<img src="/assets/besties.svg" aria-hidden="true" alt="" />
+					<span class="title">besties.house</span>
+					<p>silly group chat and coder collective</p>
+					<span class="time-span">2020 -</span>
+				</a>
+			</li>
+		</ul>
 	</div>
-	<div class="window-container">
-		<div class="window">
-			<p>
-				hi! im <strong>hazel</strong>. i'm a web developer.
-			</p>
-			<p>
-				i've been making websites since i was 12. i code primarily in golang,
-				typescript, and svelte.
-			</p>
-			<br />
-			<p>
-				currently i maintain and develop open source projects @ <a
-					href="https://besties.house">besties.house</a
-				>
-				including the source code forge <a href="https://git.gay">git.gay</a>
-				and our static site host
-				<a href="https://pages.gay">pages.gay</a> (which this site is hosted on!)
-			</p>
-			<br />
-			<p>
-				i also do freelance! if you've got a project i could be a good fit for, <a
-					href="#contact">send me a message</a
-				> :&rpar;
-			</p>
-			<br />
-			<p><a href="https://git.gay/h/hazysh">source code</a></p>
-		</div>
-	</div>
-	<div class="window-container hidden-until-target" id="contact">
-		<div class="window" style="max-width: 20rem;">
-			<ul class="contact-list">
-				<li>
-					<dl>
-						<dt>email</dt>
-						<dd>hazy@besties.house</dd>
-					</dl>
-				</li>
-				<li>
-					<dl>
-						<dt>discord</dt>
-						<dd>hazycora</dd>
-					</dl>
-				</li>
-				<li>
-					<dl>
-						<dt>matrix</dt>
-						<dd>@h:besties.house</dd>
-					</dl>
-				</li>
-				<li>
-					<dl>
-						<dt>fedi</dt>
-						<dd>h@besties.house</dd>
-					</dl>
-				</li>
-				<li>
-					<dl>
-						<dt>xmpp</dt>
-						<dd>h@besties.house</dd>
-					</dl>
-				</li>
-				<li>
-					<dl>
-						<dt>keyoxide</dt>
-						<dd>
-							<a rel="me" href="https://keyoxide.org/h@besties.house"
-								>78f2d587b07ccef764249c2377b7fdd77fd16f6d</a
-							>
-						</dd>
-					</dl>
-				</li>
+	<aside>
+		<div class="me">
+			<div class="graphic">
+				<Avatar />
+				<p class="status">Hey&lt;3</p>
+			</div>
+			<ul class="socials">
+				{#each socials as social}
+					<li>
+						<Social {social} />
+					</li>
+				{/each}
 			</ul>
 		</div>
-	</div>
-</div>
 
-<style>
-	.terminal {
-		font-family: 'Anonymous Pro', monospace;
-		line-height: 1;
-		margin-bottom: 2rem;
-		word-break: break-word;
-	}
-	pre {
-		margin: 0;
-		white-space: pre-line;
-		word-break: break-word;
-	}
-	.pfp {
-		width: 10em;
-		max-width: 100%;
-		height: unset;
-		user-select: none;
-	}
-	.neofetch {
-		color: var(--white);
-		display: grid;
-		gap: 1rem;
-		grid-template-columns: 10em 1fr;
-	}
-	.neofetch span {
-		color: #ff79c6;
-	}
-	.neofetch a,
-	.shell a {
-		color: inherit;
-	}
-	.colors {
-		display: grid;
-		width: 100%;
-		max-width: 24ch;
-		height: 2em;
-		grid-template-columns: repeat(8, 1fr);
-	}
+		<hr />
 
-	.window-container {
-		width: 100%;
-		overflow: hidden;
-		display: block;
-	}
-	.window {
-		margin: 1rem 0;
-		margin-inline-start: auto;
-		width: 100%;
-		border: 1px solid var(--accent);
-		width: 100%;
-		max-width: 24rem;
-		padding: 0.5rem;
-	}
-	@media screen and (max-width: 400px) {
-		.neofetch {
-			grid-template-columns: none;
-			grid-template-rows: min-content 1fr;
-		}
-		.window {
-			max-width: unset !important;
-		}
-	}
-	.window a {
-		color: var(--accent);
-		text-decoration: none;
-	}
-	.window a:hover {
-		text-decoration: underline;
-	}
+		<SidebarPosts link heading="Blog" posts={data.posts} />
+	</aside>
+</main>
 
-	.contact-list {
-		margin: 0;
-		padding: 0;
-		list-style: none;
+<style lang="postcss">
+	main {
+		margin-block: 2rem;
+		margin-inline: auto;
+		max-width: var(--page-max-width);
+		padding: var(--page-padding);
+
 		display: grid;
-		grid-template-columns: min-content 1fr;
-		row-gap: 0.25rem;
-		column-gap: 1ch;
-		min-width: 0;
-		word-break: break-all;
-		& li,
-		& dl {
-			display: contents;
+
+		@media (min-width: 58rem) {
+			grid-template-columns: 1fr 18rem;
 		}
-		& dt {
-			font-weight: bold;
-			white-space: nowrap;
-			&::after {
-				content: ':';
+
+		gap: 4rem;
+	}
+	article {
+		font-size: 1.125rem;
+		line-height: 1.6;
+
+		h1 {
+			color: var(--accent-clr);
+			font-size: 3rem;
+			margin-block: 0 0.5rem;
+			.pronouns {
+				font-size: 1.25rem;
+				font-weight: 400;
+				color: var(--text-muted-clr);
+				vertical-align: middle;
 			}
 		}
-		& dd {
-			margin: 0;
-			white-space: pre-wrap;
+
+		a:not(:hover) {
+			text-decoration-color: var(--link-clr);
 		}
 	}
 
-	.hidden-until-target {
-		display: none;
+	.projects {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+		gap: 0.75rem;
+
+		li > a {
+			display: block;
+			position: relative;
+			background-color: var(--elevated-clr);
+			border: 1px solid var(--border-clr);
+			border-radius: 0.25rem;
+			padding: 0.25rem;
+			overflow: hidden;
+			text-decoration: none;
+
+			.title {
+				font-weight: 800;
+				color: var(--text-clr);
+				text-decoration: none;
+			}
+
+			p {
+				margin-block: 0;
+				color: var(--text-muted-clr);
+			}
+
+			.time-span {
+				font-size: 0.75rem;
+				color: var(--text-muted-clr);
+			}
+
+			img {
+				user-select: none;
+				position: absolute;
+				z-index: -1;
+				opacity: 0.5;
+				filter: blur(1px);
+				top: -1rem;
+				right: -0.25rem;
+				width: 6rem;
+			}
+		}
 	}
-	.hidden-until-target:target {
-		display: unset;
+
+	.me {
+		.graphic {
+			width: min-content;
+			margin-inline: auto;
+		}
+		:global(.avatar) {
+			width: 5rem;
+			height: 5rem;
+			border-radius: 25%;
+			user-select: none;
+			border-end-end-radius: 0;
+		}
+		.status {
+			background-color: var(--bubble-clr);
+			margin-block: 0rem 1rem;
+			margin-inline-start: 5rem;
+			padding: 0.5rem 0.75rem;
+			border-radius: 1rem;
+			font-size: 1.25rem;
+			font-weight: 600;
+			user-select: none;
+			width: fit-content;
+			position: relative;
+			isolation: isolate;
+
+			border-start-start-radius: 0;
+		}
+		:global(.avatar),
+		.status {
+			filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+				drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+		}
+		.socials {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			justify-content: center;
+		}
 	}
 </style>

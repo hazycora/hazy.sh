@@ -1,0 +1,172 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+:root {
+	--page-max-width: 75rem;
+	--page-padding-block: 2rem;
+	--page-padding-inline: 1rem;
+	--page-padding: var(--page-padding-block) var(--page-padding-inline);
+
+	--accent-alt-clr: #ff7dc8;
+	--accent-clr: #5f5fff;
+	--fg-clr: #f1f1ff;
+	--text-clr: #dfdfff;
+	--icon-clr: #a8a8e0;
+	--icon-hover-clr: #7777f9;
+	--text-muted-clr: #8686b3;
+	--emphasis-clr: #9999ff;
+	--bg-clr: #0a0a1a;
+	--bg-alt-clr: #1e1e40;
+	--bubble-clr: #17172d;
+	--elevated-clr: #1e1e4090;
+	--lowered-clr: #040209a0;
+	--elevated-hover-clr: #1e1e40a0;
+	--highlight-hover-clr: #3b2855cf;
+
+	--highlight-gradient: radial-gradient(ellipse, #ceceff60, transparent 50%);
+
+	--heading-clr: var(--fg-clr);
+	--border-clr: #d2d2ff20;
+	--link-clr: var(--accent-clr);
+	--selection-clr: #5839d266;
+
+	color-scheme: dark;
+	background-color: var(--bg-clr);
+	color: var(--text-clr);
+	font-family: 'DM Sans Variable', 'DM Sans', system-ui, sans-serif;
+	scrollbar-color: var(--accent) var(--bg);
+	scrollbar-width: thin;
+	scrollbar-gutter: stable;
+}
+
+::selection {
+	background-color: var(--selection-clr);
+	background-blend-mode: lighten;
+}
+
+body {
+	margin: 0;
+}
+
+hr {
+	color: var(--border-clr);
+	margin-block: 4rem;
+	border: none;
+	border-top: 1px solid var(--border-clr);
+}
+
+aside hr {
+	margin-block: 1rem;
+}
+
+p a {
+	color: inherit;
+	text-underline-offset: 0.1em;
+}
+
+/* code blocks */
+
+code,
+pre.shiki {
+	font-family: 'Anonymous Pro', monospace;
+	font-size: 0.875rem;
+}
+
+pre.shiki {
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+}
+
+pre code {
+	counter-reset: step;
+	counter-increment: step 0;
+}
+
+pre code .line::before {
+	content: counter(step);
+	counter-increment: step;
+	width: 1rem;
+	margin-right: 1.5rem;
+	display: inline-block;
+	text-align: right;
+	color: rgba(123, 115, 148, 0.4);
+	word-break: keep-all;
+}
+
+/* DMs */
+
+.dm {
+	background-color: var(--lowered-clr);
+	border-radius: 0.5rem;
+	width: 100%;
+	margin: 1rem auto;
+	padding: 0.5rem;
+}
+
+.dm > div,
+.dm > blockquote {
+	position: relative;
+	z-index: 2;
+	margin: 0.5rem auto;
+	width: 30rem;
+	max-width: 100%;
+}
+
+.dm p {
+	padding: 0.5em;
+	background-color: var(--elevated-clr);
+	width: fit-content;
+	max-width: 100%;
+	max-width: min(100% - 2rem, 20rem);
+	margin: 2px 0;
+}
+
+.dm > blockquote p {
+	margin-inline-end: auto;
+	border-radius: 0 1rem 1rem 0;
+}
+
+.dm > blockquote p:last-child {
+	border-bottom-left-radius: 1rem;
+}
+
+.dm > blockquote p:first-child {
+	border-top-left-radius: 1rem;
+}
+
+.dm > div p {
+	background-color: var(--emphasis-clr);
+	color: var(--bg-clr);
+	margin-inline-start: auto;
+	border-radius: 1rem 0 0 1rem;
+}
+
+.dm > div p:last-child {
+	border-bottom-right-radius: 1rem;
+}
+
+.dm > div p:first-child {
+	border-top-right-radius: 1rem;
+}
+
+/* utils */
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
