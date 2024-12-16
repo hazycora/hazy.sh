@@ -4,158 +4,411 @@
 		<link href="https://hazy.sh/rss" rel="self"/>
 		<link href="https://hazy.sh/blog"/>
 		<id>https://hazy.sh/rss</id>
-		<updated>2024-12-16T00:04:59.000Z</updated>
+		<updated>2024-12-16T13:48:07.000Z</updated>
 		<author>
 			<name>Hazel Cora</name>
 		</author>
 		<subtitle>hazel's blog for whatever</subtitle>
-		<generator>https://git.gay/h/hazysh</generator>
-
-		<entry>
-				<title>Webfishing's bizarre profanity filter</title>
-				<link href="https://hazy.sh/blog/webfishings-silly-filter"/>
-				<id>https://hazy.sh/blog/webfishings-silly-filter</id>
-				<updated>2024-11-11T00:00:00.000Z</updated>
-				<published>2024-11-11T00:00:00.000Z</published>
-				<content type="html"><![CDATA[ <p data-svelte-h="svelte-1ndy666" xmlns="http://www.w3.org/1999/xhtml"><strong>Update:</strong> The developer, lamedev, <a href="https://lethallava.land/notes/a0hatpsc0g" rel="nofollow">knows of this</a>! I expect it’ll be fixed in the next update. Also, my guess for the source of the list <a href="https://lethallava.land/notes/a0hayv2l1n" rel="nofollow">was correct</a>.
-This post will remain as a curiosity :)</p> <hr xmlns="http://www.w3.org/1999/xhtml"/> <p data-svelte-h="svelte-qylxbx" xmlns="http://www.w3.org/1999/xhtml">My friend <a href="https://astroorbis.com" rel="nofollow">Astra</a> was looking around a decompiled version of Webfishing—giving her access to some of
+		<generator>https://git.gay/h/hazysh</generator><entry>
+			<title>Webfishing's bizarre profanity filter</title>
+			<link href="https://hazy.sh/blog/webfishings-silly-filter"/>
+			<id>https://hazy.sh/blog/webfishings-silly-filter</id>
+			<updated>2024-11-11T00:00:00.000Z</updated>
+			<published>2024-11-11T00:00:00.000Z</published>
+			<content type="html"><![CDATA[
+<p><strong>Update:</strong> The developer, lamedev, <a
+  href="https://lethallava.land/notes/a0hatpsc0g"
+  rel="nofollow"
+>knows of this</a>! I expect it’ll be fixed in the next update. Also, my guess for the source of the list <a
+  href="https://lethallava.land/notes/a0hayv2l1n"
+  rel="nofollow"
+>was correct</a>.
+This post will remain as a curiosity :)</p>
+<hr>
+<p>My friend <a href="https://astroorbis.com" rel="nofollow">Astra</a> was looking around a decompiled version of Webfishing—giving her access to some of
 the source code and assets of the game—when she found the profanity list used by the recently-added chat filter. I’ve uploaded
-this file as <a href="https://gist.github.com/hazycora/f7fde1be74022d196945577a1817d153" rel="nofollow">a GitHub Gist</a>.</p> <p data-svelte-h="svelte-18x58up" xmlns="http://www.w3.org/1999/xhtml">The list is <em>almost</em> entirely what you’d expect. Just a bunch of swears and slurs, exactly what I would want to be blocked if I
-had a chat filter option turned on. But there are some strange outliers!</p> <div style="font-size: 1.25rem" data-svelte-h="svelte-ifx3tg" xmlns="http://www.w3.org/1999/xhtml"><p><strong>Before I continue:</strong> The profanity list is very clearly sourced from some online list. I don’t think the developer of Webfishing
-made this list themselves or thoroughly checked it. These quirks are certainly a mistake. Do not interpret any of this as malice or bias.</p></div> <p data-svelte-h="svelte-1l4bll" xmlns="http://www.w3.org/1999/xhtml">Here are just a handful of words which are censored, and probably shouldn’t be. This is almost certainly not everything, this is a pretty big
-list to sift through!</p> <ul data-svelte-h="svelte-u8q6kk" xmlns="http://www.w3.org/1999/xhtml"><li>arab</li> <li>canadian</li> <li>ethiopian</li> <li>german</li> <li>mexican</li> <li>palestinian</li> <li>israeli</li> <li>jewish</li> <li>latin</li> <li>queer</li> <li>gay</li> <li>lesbian</li> <li>bi (along with “bi-sexual”, but curiously not “bisexual”?)</li> <li>my personal favorite, “women’s”</li></ul> <p data-svelte-h="svelte-1w625mw" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/webfishings-silly-filter/womens-rights.png" alt="Trying to say 'I am an advocate for women's rights' results in the word 'women's' being censored."/></p> <p data-svelte-h="svelte-bot6pq" xmlns="http://www.w3.org/1999/xhtml">Another interesting quirk is that some words in the list end with a space. This causes them to be completely ignored when filtering words.</p> <p data-svelte-h="svelte-1ut76pl" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/webfishings-silly-filter/bastard.png" alt="The word bastard shown in the chat."/></p> <h2 id="howd-that-happen" data-svelte-h="svelte-1v3esx3" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#howd-that-happen"><span class="icon icon-link"></span></a>How’d that happen?</h2> <p data-svelte-h="svelte-p5z4ef" xmlns="http://www.w3.org/1999/xhtml">So, as I said in the disclaimer, I believe this list was certainly just copy-pasted from somewhere online. But where? I don’t
+this file as <a
+  href="https://gist.github.com/hazycora/f7fde1be74022d196945577a1817d153"
+  rel="nofollow"
+>a GitHub Gist</a>.</p>
+<p>The list is <em>almost</em> entirely what you’d expect. Just a bunch of swears and slurs, exactly what I would want to be blocked if I
+had a chat filter option turned on. But there are some strange outliers!</p>
+<div style="font-size: 1.25rem">
+<p><strong>Before I continue:</strong> The profanity list is very clearly sourced from some online list. I don’t think the developer of Webfishing
+made this list themselves or thoroughly checked it. These quirks are certainly a mistake. Do not interpret any of this as malice or bias.</p>
+</div>
+<p>Here are just a handful of words which are censored, and probably shouldn’t be. This is almost certainly not everything, this is a pretty big
+list to sift through!</p>
+<ul>
+<li>arab</li>
+<li>canadian</li>
+<li>ethiopian</li>
+<li>german</li>
+<li>mexican</li>
+<li>palestinian</li>
+<li>israeli</li>
+<li>jewish</li>
+<li>latin</li>
+<li>queer</li>
+<li>gay</li>
+<li>lesbian</li>
+<li>bi (along with “bi-sexual”, but curiously not “bisexual”?)</li>
+<li>my personal favorite, “women’s”</li>
+</ul>
+<p><img
+  src="/blog/webfishings-silly-filter/womens-rights.png"
+  alt="Trying to say 'I am an advocate for women's rights' results in the word 'women's' being censored."
+></p>
+<p>Another interesting quirk is that some words in the list end with a space. This causes them to be completely ignored when filtering words.</p>
+<p><img
+  src="/blog/webfishings-silly-filter/bastard.png"
+  alt="The word bastard shown in the chat."
+></p>
+<h2>How’d that happen?</h2>
+<p>So, as I said in the disclaimer, I believe this list was certainly just copy-pasted from somewhere online. But where? I don’t
 actually know where <em>exactly</em> they found it, but I’ve got a pretty big lead. Searching Google for profanity lists, I stumbled upon
-<a href="https://www.cs.cmu.edu/~biglou/resources/bad-words.txt" rel="nofollow"><code>bad-words.txt</code></a>, which includes many of these same words. It also includes many more words, though, so Webfishing’s developer either tried to
-manually sort through the list and didn’t catch enough things, or they found a different version of this list.</p> <p data-svelte-h="svelte-17yj0c3" xmlns="http://www.w3.org/1999/xhtml">The feature was added in the very last update, <a href="https://store.steampowered.com/news/app/3146520/view/4467101633890746444" rel="nofollow">Patch 1.09</a>, and I don’t doubt it’ll get fixed soon enough :)</p>]]></content>
-			</entry>
-<entry>
-				<title>I kinda just don’t care what the OSI thinks</title>
-				<link href="https://hazy.sh/blog/i-dont-care-what-the-osi-thinks"/>
-				<id>https://hazy.sh/blog/i-dont-care-what-the-osi-thinks</id>
-				<updated>2024-05-03T00:00:00.000Z</updated>
-				<published>2024-05-03T00:00:00.000Z</published>
-				<content type="html"><![CDATA[ <p data-svelte-h="svelte-hu5wpt" xmlns="http://www.w3.org/1999/xhtml">I’ve begun using the <a href="https://oql.avris.it/" rel="nofollow">Opinionated Queer License</a> for many of my FOSS projects. It prohibits use of the projects by corporations which pay workers unfairly, prohibits use in military tech or for policing, and prohibits any bigoted use.</p> <div class="dm" data-svelte-h="svelte-19ksrfu" xmlns="http://www.w3.org/1999/xhtml"><div class="received"><p>A license prohibiting use by corporations isn’t FOSS!</p></div> <div class="sent"><p>idc</p></div></div> <p data-svelte-h="svelte-xbxjkc" xmlns="http://www.w3.org/1999/xhtml">I’ve had this discussion a few times now with some fossbro types. Any project under the OQL isn’t considered open source by the Open Source Initiative because it doesn’t allow <em>everyone</em> the same right to use the project. Instead, these projects are technically “source available”, the source code is visible to the public but use is only available under stricter terms.</p> <p data-svelte-h="svelte-1cczfxx" xmlns="http://www.w3.org/1999/xhtml"><strong>But I don’t really care what the Open Source Initiative thinks?</strong></p> <p data-svelte-h="svelte-1j2gkj8" xmlns="http://www.w3.org/1999/xhtml">I’ve made the source code of my projects available to make the world a better place, not to allow anything I’ve made to be used for evil. If you believe this makes my stuff not technically Open Source, I kinda just don’t care.</p> <p data-svelte-h="svelte-8rimv8" xmlns="http://www.w3.org/1999/xhtml">“Open Source” is obviously a selling point for projects. I get more excited for a project when I see it’s open source, knowing I’d be allowed to use a project myself and extend it is great. This requirement that a project must be willing to be used for evil to be considered open source just serves to take the ability to promote projects as open source from people like myself.</p> <p data-svelte-h="svelte-1fuxshb" xmlns="http://www.w3.org/1999/xhtml">I’m going to continue to call my projects FOSS whether they’re under the MIT license, AGPL, or OQL. I don’t care that the OSI believes otherwise. The source is available for anyone, and can be used by whoever for anything that isn’t outright evil, and I think that’s all that matters. In the same way that some FOSS projects aren’t allowed to be used without sharing a copy of the license &amp; modifications, my FOSS projects aren’t allowed to be used without having the decency to be an ally.</p>]]></content>
-			</entry>
-<entry>
-				<title>Twitter's cards have a bug that makes phishing easy</title>
-				<link href="https://hazy.sh/blog/twitter-summary-card-phishing"/>
-				<id>https://hazy.sh/blog/twitter-summary-card-phishing</id>
-				<updated>2023-06-03T00:00:00.000Z</updated>
-				<published>2023-06-03T00:00:00.000Z</published>
-				<content type="html"><![CDATA[ <p data-svelte-h="svelte-zdq9st" xmlns="http://www.w3.org/1999/xhtml">(I’m not the first to find this problem. It’s been known since 2019, I link to other articles and blog posts that came before me at the end.)</p> <p data-svelte-h="svelte-2qegzu" xmlns="http://www.w3.org/1999/xhtml">When you link to something at the end of a Tweet, the link isn’t displayed. Instead, you’ll only see a “summary card” Twitter generates when a post is made. The domain name of the URL is displayed in these cards, so at face value they don’t make phishing easier.</p> <p data-svelte-h="svelte-1783v3k" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/twitter-summary-card-phishing/card-example-domain-highlighted.png" alt="A Tweet displaying a summary card linking to discord.com"/></p> <h2 id="their-implementation-is-not-perfect" data-svelte-h="svelte-w0e5m6" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#their-implementation-is-not-perfect"><span class="icon icon-link"></span></a>their implementation is Not Perfect</h2> <p data-svelte-h="svelte-1pyo0mm" xmlns="http://www.w3.org/1999/xhtml">If a link redirects to another page, Twitter follows that redirect and displays the domain name of the destination instead of the original URL. This is fine, it means the cards will reflect the same page users will see.
-But the user isn’t sent directly to the destination- When someone clicks one of these cards, they go to the original URL. For typical redirect links, that’s okay, because the redirect Twitter experiences will we the same as the user’s redirect. But what if a malicious site serves a different redirect to users than to Twitter?</p> <p data-svelte-h="svelte-1496uh8" xmlns="http://www.w3.org/1999/xhtml">When Twitter fetches the page content in order to generate these cards, they set the HTTP “User-Agent” header to begin with “Twitterbot/”, so it can be detected on our website that the request was for Twitter. Setting custom User-Agents for things like this is normal, it means sites can customise the text of embeds for specific sites if necessary or block Twitter from making these requests if desired, but for malicious sites it also allows us to exploit this issue reliably.</p> <p data-svelte-h="svelte-1c2n499" xmlns="http://www.w3.org/1999/xhtml">Here’s an example of an ExpressJS route that detects Twitter and redirects to discord.com, while redirecting to example.com for everyone else:</p> <pre class="language-js" xmlns="http://www.w3.org/1999/xhtml"><!-- HTML_TAG_START --><code class="language-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-	<span class="token keyword">const</span> detectedTwitter <span class="token operator">=</span> req<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'user-agent'</span><span class="token punctuation">]</span>
-		<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-		<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'Twitterbot/'</span><span class="token punctuation">)</span>
-
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>detectedTwitter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token comment">// redirect to the page to be displayed on Twitter</span>
-		res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'https://discord.com'</span><span class="token punctuation">)</span>
-		<span class="token keyword">return</span>
-	<span class="token punctuation">}</span>
-
-	<span class="token comment">// handle request for other users</span>
-	<span class="token comment">// malicious sites could serve a phishing site right here</span>
-	res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'https://example.com'</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1haxr7a" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/twitter-summary-card-phishing/demo.gif" alt="An animated GIF showing a Tweet that looks to contain a link to Discord, but sends users to example.com instead"/></p> <h2 id="this-issue-is-old" data-svelte-h="svelte-ui5nra" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#this-issue-is-old"><span class="icon icon-link"></span></a>this issue is old</h2> <p data-svelte-h="svelte-19en4zp" xmlns="http://www.w3.org/1999/xhtml">Twitter has had this issue for years, and I’m by no means the first to notice it. It’s <a href="https://shkspr.mobi/blog/2019/03/scammers-abusing-twitter-cards-via-redirects/" rel="nofollow">been known since 2019</a> at the latest. My friend <a href="https://twitter.com/1lexxi" rel="nofollow">Lexi</a> found the same issue a couple years ago, and she told me it reported this to Twitter through HackerOne, but the exploit still hasn’t been fixed.</p> <div class="dm" data-svelte-h="svelte-aocjyx" xmlns="http://www.w3.org/1999/xhtml"><div class="received"><p>twitters bbp is a joke, fixing things is not their strong suit</p></div> <div class="sent"><p>Lmao</p></div></div> <p data-svelte-h="svelte-1kwaplr" xmlns="http://www.w3.org/1999/xhtml">BleepingComputer <a href="https://www.bleepingcomputer.com/news/security/twitter-can-be-tricked-into-showing-misleading-embedded-links/" rel="nofollow">wrote on this in 2019</a> and contacted Twitter about it, to no response.</p> <blockquote data-svelte-h="svelte-1hce6mz" xmlns="http://www.w3.org/1999/xhtml"><p>BleepingComputer reached out to Twitter for a statement about this problem and if it would be fixed in the near future but received no reply at the time of publishing.</p></blockquote> <p data-svelte-h="svelte-wuzlzd" xmlns="http://www.w3.org/1999/xhtml">Hopefully Twitter realises the severity of this problem. Be careful when clicking links- the suggestion to check URLs before clicking is a good one, but it’s not infallible!</p>]]></content>
-			</entry>
-<entry>
-				<title>Bypassing YouTube Content-ID with flashing frames</title>
-				<link href="https://hazy.sh/blog/bypassing-content-id"/>
-				<id>https://hazy.sh/blog/bypassing-content-id</id>
-				<updated>2023-05-03T00:00:00.000Z</updated>
-				<published>2023-05-03T00:00:00.000Z</published>
-				<content type="html"><![CDATA[ <p data-svelte-h="svelte-13sfy4e" xmlns="http://www.w3.org/1999/xhtml">Anyone who archives media to YouTube knows the struggle that is working around YouTube’s Content ID system. It’s the system which detects copyrighted material in order to allow media companies to earn advertising revenue from videos which use their content, but it also allows these companies to outright block videos from many parts of the world. Of course, YouTube couldn’t exist without Content ID, but that doesn’t make it any less frustrating.</p> <h2 id="what-if-there-was-a-better-way" data-svelte-h="svelte-lop0zb" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#what-if-there-was-a-better-way"><span class="icon icon-link"></span></a>What if there was a better way?</h2> <p data-svelte-h="svelte-1bwct4g" xmlns="http://www.w3.org/1999/xhtml">YouTube’s Content ID is pretty sophisticated. People have tried many, many things to get around it. Various visual effects, like hue-shifting, vignette filters, adding massive coloured borders surrounding the video, and many more have already been tried numerous times. These tricks work <em>sometimes</em>, but YouTube’s Content ID has only gotten better and better at working around these tricks. Any solution needs to make the copyrighted content completely invisible to Content ID, but this very often also means obscuring it for actual human viewers.</p> <p data-svelte-h="svelte-u2jlmj" xmlns="http://www.w3.org/1999/xhtml">But I’ve had an idea in the back of my mind since I saw a video that appeared in my recommendations a couple months ago. It’s a <a href="https://en.wikipedia.org/wiki/Bad_Apple!!#Use_as_a_graphical_and_audio_test" rel="nofollow">Bad Apple video</a> which can only be viewed in HD. How this works is that 60fps YouTube videos don’t actually play at 60fps unless you view them at 720p or higher, so you can replace every other frame with an entirely black frame and the video will be invisible if you’re not watching with an HD quality setting.</p> <p data-svelte-h="svelte-1sk0xxj" xmlns="http://www.w3.org/1999/xhtml"><iframe src="https://www.youtube.com/embed/lwi7ofgZ8ME" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" style="width: 100%; aspect-ratio: 16 / 9; border-radius: 0.75rem"></iframe></p> <p data-svelte-h="svelte-1bxixsp" xmlns="http://www.w3.org/1999/xhtml">What if Content ID doesn’t scan the HD 60fps versions of videos? Would it then be completely oblivious to half of the frames of the video?</p> <p data-svelte-h="svelte-o8yd5d" xmlns="http://www.w3.org/1999/xhtml"><strong>This isn’t a good idea</strong>. It would make it impossible to watch on low resolutions, harder to compress, makes the video uncomfortable to watch and could even cause watching the video to <em><strong>induce seizures</strong></em> in people with photosensitive epilepsy. This is not a good solution to the problem.</p> <p data-svelte-h="svelte-15l5lhd" xmlns="http://www.w3.org/1999/xhtml"><em>But would it work though?</em></p> <h2 id="ffmpeg-is-a-challenge" data-svelte-h="svelte-19kshdg" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#ffmpeg-is-a-challenge"><span class="icon icon-link"></span></a><code>ffmpeg</code> is a challenge</h2> <p data-svelte-h="svelte-rz7w9q" xmlns="http://www.w3.org/1999/xhtml">I didn’t want to extract all the frames and then swap every other one with a black image, I thought that would probably take too long. Instead I looked into <code>ffmpeg</code>’s <code>geq</code> video filter. It allows you to make an expression which is ran per-pixel based on a few variables. <code>ffmpeg</code> also has <code>if</code> and <code>mod</code> functions, so this seemed like it would be a fairly easy task.</p> <pre class="language-sh" xmlns="http://www.w3.org/1999/xhtml"><!-- HTML_TAG_START --><code class="language-sh">ffmpeg <span class="token parameter variable">-i</span> input.mp4 <span class="token parameter variable">-y</span> <span class="token parameter variable">-vf</span> <span class="token string">"fps=60,geq=if(mod(N,2),p(X,Y))"</span> <span class="token parameter variable">-preset</span> ultrafast output.mp4</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1jrxlif" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/bypassing-content-id/green-frame.png" alt="an ffplay window showing a dark green frame"/></p> <p data-svelte-h="svelte-x7ht7h" xmlns="http://www.w3.org/1999/xhtml">Okay, so this doesn’t work how I thought it would. I assumed the color value <code>0</code> would be black, but it’s instead some dark muddy green colour? I think this is because <code>ffmpeg</code> is using the <a href="https://en.wikipedia.org/wiki/YUV" rel="nofollow">YUV color model</a>. I’m not exactly sure how I should get it to use the color black for these frames using a YUV color value, but luckily the <code>geq</code> filter allows me to set expressions for the r, g, and b values of each pixel instead:</p> <pre class="language-sh" xmlns="http://www.w3.org/1999/xhtml"><!-- HTML_TAG_START --><code class="language-sh">ffmpeg <span class="token parameter variable">-i</span> input.mp4 <span class="token parameter variable">-y</span> <span class="token parameter variable">-vf</span> <span class="token string">"fps=60,geq=r=if(mod(N,2),p(X,Y)):g=if(mod(N,2),p(X,Y)):b=if(mod(N,2),p(X,Y))"</span> <span class="token parameter variable">-preset</span> ultrafast output.mp4</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-icujx" xmlns="http://www.w3.org/1999/xhtml">To be clear, this command sucks. It’s evaluating the expression on every single pixel in every single frame. I’m positive there are wayyyy better ways to do this, but it was taking me a while to figure this out to begin with so I’m willing to just go with this command for now. If anyone’s figured out a better way to do this in <code>ffmpeg</code>, please do message me!</p> <p data-svelte-h="svelte-ezkcvp" xmlns="http://www.w3.org/1999/xhtml">I’m getting 0.5x speeds out of this at best on my PC. To be fair, this PC’s specs are abysmal, so that wasn’t doing it any favours.</p> <h2 id="does-this-actually-work" data-svelte-h="svelte-1r7i22r" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#does-this-actually-work"><span class="icon icon-link"></span></a>does this actually work</h2> <p data-svelte-h="svelte-1m96412" xmlns="http://www.w3.org/1999/xhtml">I sent the script off to my friend <a href="https://tacohitbox.com" rel="nofollow">Aria</a>, who spends An Excessive Amount Of Time archiving media to various places including YouTube.</p> <p data-svelte-h="svelte-uvrpj" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/bypassing-content-id/it-works.png" alt="tacohitbox: NO FUCKING SHOT, DUDE THE CONSTANT FLICKERING ONE WORKED; hazy: HAHAHAA, send the fucking link; tacohitbox: THIS IS SO FUCKING FUNNY"/></p> <p data-svelte-h="svelte-9sbtlp" xmlns="http://www.w3.org/1999/xhtml">Really?? This is so stupid. This is completely useless. No way this actually works. I’m running the command on a video real quick to try it out for myself.</p> <p data-svelte-h="svelte-13z1hvt" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/bypassing-content-id/no-family-guy-funnies.png" alt="Screenshot of YouTube Studio, showing an audio claim for Family Guy - Life of Brian, blocking the video in all territories"/></p> <p data-svelte-h="svelte-1asvhbm" xmlns="http://www.w3.org/1999/xhtml">Nooooo. I forgot about this. Some shows also do Content ID for the audio of episodes. Even if the video itself is completely undetectable, the video may still get claimed if it contains audio from something. So I’m going to have to do some more alterations to this video to make it get through Content ID.</p> <p data-svelte-h="svelte-1t15dgz" xmlns="http://www.w3.org/1999/xhtml">I think, for this demo, I’ll just put some music over the video. Music gets Content ID too, but music labels tend to not block videos which contain music, instead just taking ad revenue. I’m completely willing to give some music label all the ad revenue for this video so long as it’s visible.</p> <p data-svelte-h="svelte-dgqu8k" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/bypassing-content-id/kdenlive-drained.png" alt="Screenshot of the Kdenlive video editor with an audio track filled with Bladee songs"/></p> <p data-svelte-h="svelte-pfr061" xmlns="http://www.w3.org/1999/xhtml">I’m so sorry, but The Family Guy Funny Moments will have to become drained.</p> <h2 id="family-guy-funny-moments-drained-edition-warning-flashing-lights" data-svelte-h="svelte-113efmc" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#family-guy-funny-moments-drained-edition-warning-flashing-lights"><span class="icon icon-link"></span></a>family guy funny moments (drained edition) (WARNING: FLASHING LIGHTS)</h2> <p data-svelte-h="svelte-5u66s2" xmlns="http://www.w3.org/1999/xhtml"><iframe src="https://www.youtube.com/embed/XrvbAuk42LE?start=450" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" style="width: 100%; aspect-ratio: 16 / 9; border-radius: 0.75rem"></iframe></p> <p data-svelte-h="svelte-10acf5m" xmlns="http://www.w3.org/1999/xhtml">this has got to be the worst thing i’ve ever made</p> <p data-svelte-h="svelte-g87tsf" xmlns="http://www.w3.org/1999/xhtml">Drain gang music added to prevent audio claims. <a href="https://open.spotify.com/playlist/6vi42OTDujqUXTfyd0DYNZ" rel="nofollow">Here’s the playlist, lol</a>. Hard-coded subtitles added to make this at least a little bit watchable. All the music I added has gotten detected by Content ID <em>with zero restrictions</em>, and the Family Guy episode itself hasn’t gotten claimed at all. This video can be watched globally. If I was in the YouTube Partner Program I could even earn advertising revenue from this video.</p> <p data-svelte-h="svelte-j83mtb" xmlns="http://www.w3.org/1999/xhtml">And, in case anyone asks, yes, even with the drain gang music this video gets claimed if I don’t use the strobe effect:</p> <p data-svelte-h="svelte-1k235z1" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/bypassing-content-id/blocked-drainer-nostrobe-upload.png" alt="Screenshot showing 'family guy drainer nostrobe' blocked in YouTube Studio"/></p> <p data-svelte-h="svelte-1pdj3g2" xmlns="http://www.w3.org/1999/xhtml">With the strobe effect, the Family Guy Funny Moments are undetected by Content ID.</p> <p data-svelte-h="svelte-1ro3rul" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/bypassing-content-id/no-block.png" alt="Screenshot showing the strobe effect video hasn't gotten blocked in YouTube Studio"/></p> <h2 id="what-have-we-learned" data-svelte-h="svelte-1xxox1x" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#what-have-we-learned"><span class="icon icon-link"></span></a>what have we learned</h2> <p data-svelte-h="svelte-vuf7da" xmlns="http://www.w3.org/1999/xhtml">You can get around YouTube Content ID! As long as you’re willing to ignore these caveats:</p> <ul data-svelte-h="svelte-bdqxxc" xmlns="http://www.w3.org/1999/xhtml"><li>it’s uncomfortable to watch</li> <li>causes massive video file size</li> <li>requires exporting at 720p or higher at 60fps</li> <li>audio can still get claimed so you’ll have to distort that, cover it up with something else, or mute it entirely</li> <li><em><strong>could cause seizures</strong></em></li></ul> <p data-svelte-h="svelte-1kb82zx" xmlns="http://www.w3.org/1999/xhtml">Please, please don’t start actually using this to evade Content ID. This isn’t a practical solution. Even if this idea were to inspire a more practical Content-ID-evading solution, always remember YouTube will simply patch it if it ever becomes widespread.</p>]]></content>
-			</entry>
-<entry>
-				<title>Downloading YouTube subscriptions in CSV format with web scraping</title>
-				<link href="https://hazy.sh/blog/download-youtube-subscriptions"/>
-				<id>https://hazy.sh/blog/download-youtube-subscriptions</id>
-				<updated>2022-05-23T00:00:00.000Z</updated>
-				<published>2022-05-23T00:00:00.000Z</published>
-				<content type="html"><![CDATA[ <p data-svelte-h="svelte-oar4td" xmlns="http://www.w3.org/1999/xhtml">Hey! This was posted <a href="https://dev.to/hazy/downloading-your-youtube-subscriptions-in-csv-format-because-google-takeout-takes-too-long-5ca1" rel="nofollow">on my dev.to profile back in 2022</a>. Apparently it was shared on Reddit, and for archival’s sake I’m reposting it here, two years later! The rest of the article is pretty much just as I wrote it in 2022. Excuse poor writing and atrocious code formatting, it’s been a bit!</p> <hr xmlns="http://www.w3.org/1999/xhtml"/> <p data-svelte-h="svelte-19jexpc" xmlns="http://www.w3.org/1999/xhtml">I wanted to import my YouTube subscriptions into the <a href="https://newpipe.net/" rel="nofollow">open-source Android YouTube client NewPipe</a>. The normal way to do that is to export the subscriptions from Google Takeout, a service Google provides to allow you to retrieve data about your account. NewPipe kindly explains the process:</p> <p data-svelte-h="svelte-1vbj5pr" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/downloading-youtube-subscriptions/instructions.webp" alt="Screenshot of the NewPipe app's explanation on how to use Google Takeout."/></p> <p data-svelte-h="svelte-cp4q1h" xmlns="http://www.w3.org/1999/xhtml"><em>Excuse the comic sans, it’s my favorite font.</em></p> <p data-svelte-h="svelte-1qz4uwj" xmlns="http://www.w3.org/1999/xhtml">NewPipe’s instructions are as follows:</p> <blockquote data-svelte-h="svelte-n6laaw" xmlns="http://www.w3.org/1999/xhtml"><p>Import YouTube subscriptions from Google takeout:</p> <ol><li>Go to this URL: <a href="https://takeout.google.com/takeout/custom/youtube" rel="nofollow">https://takeout.google.com/takeout/custom/youtube</a></li> <li>Log in when asked</li> <li>Click on “All data included”, then on “Deselect all”, then select only “subscriptions” and click “OK”</li> <li>Click on “Next step” and then on “Create export”</li> <li>Click on the “Download” button after it appears</li> <li>Click on IMPORT FILE below and select the downloaded .zip file</li> <li>[If the .zip import fails] Extract the .csv file (usually under “YouTube and YouTube Music/subscriptions/subscriptions.csv”), click on IMPORT FILE below and select the extracted csv file</li></ol></blockquote> <p data-svelte-h="svelte-zvu33f" xmlns="http://www.w3.org/1999/xhtml">What they neglect to mention is that Google Takeout can take many hours to complete.</p> <p data-svelte-h="svelte-7tf5kk" xmlns="http://www.w3.org/1999/xhtml">I tried using Google Takeout, but after an hour of waiting, I decided I’d try something else. I would scrape the list of channels I’m subscribed to, and I’d save that list as a CSV file I can import into NewPipe.</p> <h2 id="finding-out-how-the-google-takeout-csv-is-formatted" data-svelte-h="svelte-1xd0c1i" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#finding-out-how-the-google-takeout-csv-is-formatted"><span class="icon icon-link"></span></a>Finding out how the Google Takeout CSV is formatted</h2> <p data-svelte-h="svelte-tydq1s" xmlns="http://www.w3.org/1999/xhtml">In order to make my own file that NewPipe would accept as though it were a Google Takeout CSV, I had to find out the format Google Takeout uses.</p> <p data-svelte-h="svelte-vgikds" xmlns="http://www.w3.org/1999/xhtml">I found <a href="https://github.com/TeamNewPipe/NewPipeExtractor/pull/709/commits/94a29fd63ff6bb0c1805c44ef5ebf4d915427454" rel="nofollow">the PR</a> that added the Google Takeout importing support. Inside that commit was a description of the file.</p> <pre class="language-java" xmlns="http://www.w3.org/1999/xhtml"><!-- HTML_TAG_START --><code class="language-java"><span class="token comment">// Expected format of CSV file:</span>
-<span class="token comment">//      Channel Id,Channel Url,Channel Title</span>
-<span class="token comment">//      UC1JTQBa5QxZCpXrFSkMxmPw,http://www.youtube.com/channel/UC1JTQBa5QxZCpXrFSkMxmPw,Raycevick</span>
-<span class="token comment">//      UCFl7yKfcRcFmIUbKeCA-SJQ,http://www.youtube.com/channel/UCFl7yKfcRcFmIUbKeCA-SJQ,Joji</span>
-<span class="token comment">//</span>
-<span class="token comment">// Notes:</span>
-<span class="token comment">//      It's always 3 columns</span>
-<span class="token comment">//      The first line is always a header</span>
-<span class="token comment">//      Header names are different based on the locale</span>
-<span class="token comment">//      Fortunately the data is always the same order no matter what locale</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-kwk8mj" xmlns="http://www.w3.org/1999/xhtml">This was simple enough. Now I needed to find out how to get a list of the Channel ID and Channel Title of each of the channels I’m subscribed to.</p> <h2 id="youtube-scraping" data-svelte-h="svelte-narute" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#youtube-scraping"><span class="icon icon-link"></span></a>YouTube scraping</h2> <p data-svelte-h="svelte-nhyrf5" xmlns="http://www.w3.org/1999/xhtml">I found a page on YouTube <a href="https://www.youtube.com/feed/channels" rel="nofollow">that lists all the channels you’re subscribed to</a>. I got to looking at how this page worked, and realized that the page stores data inside a variable called ytInitialData. This variable stores the list of the channels you’re subscribed to, as well as some other data. YouTube paginates the list, though, so the variable won’t always have everything right off the bat. YouTube loads more of the list whenever you scroll to the bottom of the page, though, which means I can just automate the scrolling.</p> <p data-svelte-h="svelte-1q8oozr" xmlns="http://www.w3.org/1999/xhtml">Another bit of data included in the ytInitialData variable is the API token required to load the rest of the list. And when the list is fully loaded, the token is removed from ytInitialData.</p> <p data-svelte-h="svelte-1syg3lx" xmlns="http://www.w3.org/1999/xhtml">This means I can check if that token exists in order to know whether to keep scrolling down.</p> <p data-svelte-h="svelte-19ut2qs" xmlns="http://www.w3.org/1999/xhtml">I wrote a script to scroll to the bottom of the page by checking the height of the container <code>&lt;div&gt;</code> and then scrolling with the function <code>window.scrollTo</code>.</p> <p data-svelte-h="svelte-dxmmnp" xmlns="http://www.w3.org/1999/xhtml">I then wrote a script to get the Channel IDs and Channel Titles from this list. I would also need the Channel URL, but this was as easy as adding the channel ID after the string <code>"http://www.youtube.com/channel/"</code>. It then joined the data of all the channels one by one. Finally, it would log the data to the console.</p> <p data-svelte-h="svelte-1nuyke8" xmlns="http://www.w3.org/1999/xhtml">I combined these scripts and ran them together. It worked.</p> <p data-svelte-h="svelte-1a7jmi0" xmlns="http://www.w3.org/1999/xhtml">To make it just a bit more convenient, I made another script which made a <code>&lt;div&gt;</code> to put the CSV data in. This <code>&lt;div&gt;</code> would use <code>position: fixed</code> to cover the screen.</p> <p data-svelte-h="svelte-1t2t7k8" xmlns="http://www.w3.org/1999/xhtml">To make it even easier to use, I decided to make a download button to save the text as a file so you wouldn’t need to copy-paste it yourself.</p> <h2 id="the-script" data-svelte-h="svelte-pex0bo" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#the-script"><span class="icon icon-link"></span></a>The script</h2> <p data-svelte-h="svelte-1s79ct" xmlns="http://www.w3.org/1999/xhtml">Here’s my code:</p> <pre class="language-js" xmlns="http://www.w3.org/1999/xhtml"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">function</span> <span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> ytInitialData<span class="token punctuation">.</span>contents<span class="token punctuation">.</span>twoColumnBrowseResultsRenderer<span class="token punctuation">.</span>tabs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>tabRenderer<span class="token punctuation">.</span>content<span class="token punctuation">.</span>sectionListRenderer<span class="token punctuation">.</span>contents<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>
-		<span class="token operator">-</span><span class="token number">1</span>
-	<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">function</span> <span class="token function">canContinue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> <span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>continuationItemRenderer <span class="token operator">!=</span> <span class="token keyword">null</span>
-<span class="token punctuation">}</span>
-<span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">canContinue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">let</span> current <span class="token operator">=</span>
-			<span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>continuationItemRenderer<span class="token punctuation">.</span>continuationEndpoint
-				<span class="token punctuation">.</span>continuationCommand<span class="token punctuation">.</span>token
-		<span class="token function">scrollTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'primary'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>scrollHeight<span class="token punctuation">)</span>
-		<span class="token keyword">while</span> <span class="token punctuation">(</span>
-			<span class="token function">canContinue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
-			current <span class="token operator">==</span>
-				<span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>continuationItemRenderer<span class="token punctuation">.</span>continuationEndpoint
-					<span class="token punctuation">.</span>continuationCommand<span class="token punctuation">.</span>token
-		<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">r</span> <span class="token operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-	<span class="token function">scrollTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-	<span class="token keyword">let</span> floatDiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
-	<span class="token keyword">let</span> preText <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'pre'</span><span class="token punctuation">)</span>
-	floatDiv<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span>
-		<span class="token string">'style'</span><span class="token punctuation">,</span>
-		<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">position: fixed;
-		background: #0f0f0f;
-		z-index: 100000;
-		inset: 2rem;
-		overflow: auto;
-		font-size: 2rem;
-		white-space: pre;
-		color: white;
-		padding: 1rem;</span><span class="token template-punctuation string">`</span></span>
-	<span class="token punctuation">)</span>
-	<span class="token keyword">let</span> csvText <span class="token operator">=</span>
-		<span class="token string">'Channel Id,Channel Url,Channel Title\n'</span> <span class="token operator">+</span>
-		ytInitialData<span class="token punctuation">.</span>contents<span class="token punctuation">.</span>twoColumnBrowseResultsRenderer<span class="token punctuation">.</span>tabs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>tabRenderer<span class="token punctuation">.</span>content<span class="token punctuation">.</span>sectionListRenderer<span class="token punctuation">.</span>contents
-			<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-				<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>e<span class="token punctuation">.</span>itemSectionRenderer<span class="token punctuation">)</span> <span class="token keyword">return</span>
-				<span class="token keyword">return</span> e<span class="token punctuation">.</span>itemSectionRenderer<span class="token punctuation">.</span>contents<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>shelfRenderer<span class="token punctuation">.</span>content
-					<span class="token punctuation">.</span>expandedShelfContentsRenderer<span class="token punctuation">.</span>items
-			<span class="token punctuation">}</span><span class="token punctuation">)</span>
-			<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-			<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-				<span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token operator">&amp;&amp;</span> e<span class="token punctuation">.</span>channelRenderer<span class="token punctuation">)</span>
-					<span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>e<span class="token punctuation">.</span>channelRenderer<span class="token punctuation">.</span>channelId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,http://www.youtube.com/channel/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>e<span class="token punctuation">.</span>channelRenderer<span class="token punctuation">.</span>channelId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>e<span class="token punctuation">.</span>channelRenderer<span class="token punctuation">.</span>title<span class="token punctuation">.</span>simpleText<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-				<span class="token keyword">return</span> <span class="token string">''</span>
-			<span class="token punctuation">}</span><span class="token punctuation">)</span>
-			<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
-	preText<span class="token punctuation">.</span>innerText <span class="token operator">=</span> csvText
-	<span class="token keyword">let</span> downloadLink <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
-	downloadLink<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">'Download CSV'</span>
-	downloadLink<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'target'</span><span class="token punctuation">,</span> <span class="token string">'_blank'</span><span class="token punctuation">)</span>
-	downloadLink<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span>
-		<span class="token string">'style'</span><span class="token punctuation">,</span>
-		<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">color: #bf3838;
-		font-weight: bold;
-		margin-bottom: 1rem;
-		display: block;
-		padding: 1rem;
-		border-radius: 0.5rem;
-		border: 2px solid #bf3838;
-		width: fit-content;
-		text-decoration: none;</span><span class="token template-punctuation string">`</span></span>
-	<span class="token punctuation">)</span>
-	<span class="token keyword">var</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Blob</span><span class="token punctuation">(</span><span class="token punctuation">[</span>csvText<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'text/plain'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
-	downloadLink<span class="token punctuation">.</span>href <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token constant">URL</span><span class="token punctuation">.</span><span class="token function">createObjectURL</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
-	floatDiv<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>downloadLink<span class="token punctuation">)</span>
-	floatDiv<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>preText<span class="token punctuation">)</span>
-	document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>floatDiv<span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1rlbmgp" xmlns="http://www.w3.org/1999/xhtml">You can run this in DevTools at <a href="https://www.youtube.com/feed/channels" rel="nofollow">youtube.com/feed/channels</a>. You can then save the file by clicking “Download CSV”.</p> <p data-svelte-h="svelte-318ohg" xmlns="http://www.w3.org/1999/xhtml"><img src="/assets/downloading-youtube-subscriptions/screenshot.jpeg" alt="A red button reading 'Download CSV', above a list of YouTube Channel IDs and Channel URLs."/></p> <h2 id="conclusion" data-svelte-h="svelte-14u6bd9" xmlns="http://www.w3.org/1999/xhtml"><a class="header-link" href="#conclusion"><span class="icon icon-link"></span></a>Conclusion</h2> <p data-svelte-h="svelte-u3nau9" xmlns="http://www.w3.org/1999/xhtml">By the time I had finished writing the script, Google Takeout still hadn’t sent me a download of my subscriptions list. I eventually received this download hours later, but by that point I had already imported my own list into NewPipe and no longer needed theirs.</p> <p data-svelte-h="svelte-1a7wwmx" xmlns="http://www.w3.org/1999/xhtml">My guess is that Google Takeout runs on a queue, sending one person their data and then the next, rather than working on each request immediately.</p> <p data-svelte-h="svelte-bbev5b" xmlns="http://www.w3.org/1999/xhtml">I hope you find my script useful. If you make any improvements, you can let me know in the comments of my <a href="https://gist.github.com/hazycora/bc41e673aff4c9c7846d80e145574285" rel="nofollow">GitHub gist</a> about this script.</p>]]></content>
-			</entry>
-	</feed>
+<a
+  href="https://www.cs.cmu.edu/~biglou/resources/bad-words.txt"
+  rel="nofollow"
+><code>bad-words.txt</code></a>, which includes many of these same words. It also includes many more words, though, so Webfishing’s developer either tried to
+manually sort through the list and didn’t catch enough things, or they found a different version of this list.</p>
+<p>The feature was added in the very last update, <a
+  href="https://store.steampowered.com/news/app/3146520/view/4467101633890746444"
+  rel="nofollow"
+>Patch 1.09</a>, and I don’t doubt it’ll get fixed soon enough :)</p>
+]]></content>
+		</entry><entry>
+			<title>I kinda just don’t care what the OSI thinks</title>
+			<link href="https://hazy.sh/blog/i-dont-care-what-the-osi-thinks"/>
+			<id>https://hazy.sh/blog/i-dont-care-what-the-osi-thinks</id>
+			<updated>2024-05-03T00:00:00.000Z</updated>
+			<published>2024-05-03T00:00:00.000Z</published>
+			<content type="html"><![CDATA[
+<p>I’ve begun using the <a
+  href="https://oql.avris.it/"
+  rel="nofollow"
+>Opinionated Queer License</a> for many of my FOSS projects. It prohibits use of the projects by corporations which pay workers unfairly, prohibits use in military tech or for policing, and prohibits any bigoted use.</p>
+<div class="dm">
+<blockquote>
+<p>A license prohibiting use by corporations isn’t FOSS!</p>
+</blockquote>
+<div class="sent">
+<p>idc</p>
+</div>
+</div>
+<p>I’ve had this discussion a few times now with some fossbro types. Any project under the OQL isn’t considered open source by the Open Source Initiative because it doesn’t allow <em>everyone</em> the same right to use the project. Instead, these projects are technically “source available”, the source code is visible to the public but use is only available under stricter terms.</p>
+<p><strong>But I don’t really care what the Open Source Initiative thinks?</strong></p>
+<p>I’ve made the source code of my projects available to make the world a better place, not to allow anything I’ve made to be used for evil. If you believe this makes my stuff not technically Open Source, I kinda just don’t care.</p>
+<p>“Open Source” is obviously a selling point for projects. I get more excited for a project when I see it’s open source, knowing I’d be allowed to use a project myself and extend it is great. This requirement that a project must be willing to be used for evil to be considered open source just serves to take the ability to promote projects as open source from people like myself.</p>
+<p>I’m going to continue to call my projects FOSS whether they’re under the MIT license, AGPL, or OQL. I don’t care that the OSI believes otherwise. The source is available for anyone, and can be used by whoever for anything that isn’t outright evil, and I think that’s all that matters. In the same way that some FOSS projects aren’t allowed to be used without sharing a copy of the license & modifications, my FOSS projects aren’t allowed to be used without having the decency to be an ally.</p>
+]]></content>
+		</entry><entry>
+			<title>Twitter's cards have a bug that makes phishing easy</title>
+			<link href="https://hazy.sh/blog/twitter-summary-card-phishing"/>
+			<id>https://hazy.sh/blog/twitter-summary-card-phishing</id>
+			<updated>2023-06-03T00:00:00.000Z</updated>
+			<published>2023-06-03T00:00:00.000Z</published>
+			<content type="html"><![CDATA[
+<p>(I’m not the first to find this problem. It’s been known since 2019, I link to other articles and blog posts that came before me at the end.)</p>
+<p>When you link to something at the end of a Tweet, the link isn’t displayed. Instead, you’ll only see a “summary card” Twitter generates when a post is made. The domain name of the URL is displayed in these cards, so at face value they don’t make phishing easier.</p>
+<p><img
+  src="/blog/twitter-summary-card-phishing/card-example-domain-highlighted.png"
+  alt="A Tweet displaying a summary card linking to discord.com"
+></p>
+<h2>their implementation is Not Perfect</h2>
+<p>If a link redirects to another page, Twitter follows that redirect and displays the domain name of the destination instead of the original URL. This is fine, it means the cards will reflect the same page users will see.
+But the user isn’t sent directly to the destination- When someone clicks one of these cards, they go to the original URL. For typical redirect links, that’s okay, because the redirect Twitter experiences will we the same as the user’s redirect. But what if a malicious site serves a different redirect to users than to Twitter?</p>
+<p>When Twitter fetches the page content in order to generate these cards, they set the HTTP “User-Agent” header to begin with “Twitterbot/”, so it can be detected on our website that the request was for Twitter. Setting custom User-Agents for things like this is normal, it means sites can customise the text of embeds for specific sites if necessary or block Twitter from making these requests if desired, but for malicious sites it also allows us to exploit this issue reliably.</p>
+<p>Here’s an example of an ExpressJS route that detects Twitter and redirects to discord.com, while redirecting to example.com for everyone else:</p>
+<pre class="shiki shiki-themes hazycore" style="background-color:#090514;color:#bbbbbb" tabindex="0"><code lang="js"><span class="line"><span style="color:#8BC7FF">app</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">get</span><span style="color:#e4b3f0">(</span><span style="color:#F7A9D5">'/'</span><span style="color:#E8E8FF">, </span><span style="color:#b3a3ee">(</span><span style="color:#8BC7FF">req</span><span style="color:#E8E8FF">, </span><span style="color:#8BC7FF">res</span><span style="color:#E8E8FF">, </span><span style="color:#8BC7FF">next</span><span style="color:#b3a3ee">)</span><span style="color:#E8E8FF"> </span><span style="color:#CAAEFF">=</span><span style="color:#CAAEFF">></span><span style="color:#E8E8FF"> </span><span style="color:#b3a3ee">{</span></span>
+<span class="line"><span style="color:#CAAEFF">	const</span><span style="color:#8BC7FF"> detectedTwitter</span><span style="color:#E8E8FF"> = </span><span style="color:#8BC7FF">req</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">headers</span><span style="color:#9fe6f3">[</span><span style="color:#F7A9D5">'user-agent'</span><span style="color:#9fe6f3">]</span></span>
+<span class="line"><span style="color:#E8E8FF">		.</span><span style="color:#B3FFCD">toLowerCase</span><span style="color:#9fe6f3">(</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#E8E8FF">		.</span><span style="color:#B3FFCD">startsWith</span><span style="color:#9fe6f3">(</span><span style="color:#F7A9D5">'Twitterbot/'</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#CAAEFF">	if</span><span style="color:#E8E8FF"> </span><span style="color:#9fe6f3">(</span><span style="color:#8BC7FF">detectedTwitter</span><span style="color:#9fe6f3">)</span><span style="color:#E8E8FF"> </span><span style="color:#9fe6f3">{</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">		// redirect to the page to be displayed on Twitter</span></span>
+<span class="line"><span style="color:#8BC7FF">		res</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">redirect</span><span style="color:#9ff0ac">(</span><span style="color:#F7A9D5">'https://discord.com'</span><span style="color:#9ff0ac">)</span></span>
+<span class="line"><span style="color:#CAAEFF">		return</span></span>
+<span class="line"><span style="color:#E8E8FF">	</span><span style="color:#9fe6f3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">	// handle request for other users</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">	// malicious sites could serve a phishing site right here</span></span>
+<span class="line"><span style="color:#8BC7FF">	res</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">redirect</span><span style="color:#9fe6f3">(</span><span style="color:#F7A9D5">'https://example.com'</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#b3a3ee">}</span><span style="color:#e4b3f0">)</span></span></code></pre>
+<p><img
+  src="/blog/twitter-summary-card-phishing/demo.gif"
+  alt="An animated GIF showing a Tweet that looks to contain a link to Discord, but sends users to example.com instead"
+></p>
+<h2>this issue is old</h2>
+<p>Twitter has had this issue for years, and I’m by no means the first to notice it. It’s <a
+  href="https://shkspr.mobi/blog/2019/03/scammers-abusing-twitter-cards-via-redirects/"
+  rel="nofollow"
+>been known since 2019</a> at the latest. My friend <a
+  href="https://twitter.com/1lexxi"
+  rel="nofollow"
+>Lexi</a> found the same issue a couple years ago, and she told me it reported this to Twitter through HackerOne, but the exploit still hasn’t been fixed.</p>
+<div class="dm">
+<blockquote>
+<p>twitters bbp is a joke, fixing things is not their strong suit</p>
+</blockquote>
+<div>
+<p>Lmao</p>
+</div>
+</div>
+<p>BleepingComputer <a
+  href="https://www.bleepingcomputer.com/news/security/twitter-can-be-tricked-into-showing-misleading-embedded-links/"
+  rel="nofollow"
+>wrote on this in 2019</a> and contacted Twitter about it, to no response.</p>
+<blockquote>
+<p>BleepingComputer reached out to Twitter for a statement about this problem and if it would be fixed in the near future but received no reply at the time of publishing.</p>
+</blockquote>
+<p>Hopefully Twitter realises the severity of this problem. Be careful when clicking links- the suggestion to check URLs before clicking is a good one, but it’s not infallible!</p>
+]]></content>
+		</entry><entry>
+			<title>Bypassing YouTube Content-ID with flashing frames</title>
+			<link href="https://hazy.sh/blog/bypassing-content-id"/>
+			<id>https://hazy.sh/blog/bypassing-content-id</id>
+			<updated>2023-05-03T00:00:00.000Z</updated>
+			<published>2023-05-03T00:00:00.000Z</published>
+			<content type="html"><![CDATA[
+<p>Anyone who archives media to YouTube knows the struggle that is working around YouTube’s Content ID system. It’s the system which detects copyrighted material in order to allow media companies to earn advertising revenue from videos which use their content, but it also allows these companies to outright block videos from many parts of the world. Of course, YouTube couldn’t exist without Content ID, but that doesn’t make it any less frustrating.</p>
+<h2>What if there was a better way?</h2>
+<p>YouTube’s Content ID is pretty sophisticated. People have tried many, many things to get around it. Various visual effects, like hue-shifting, vignette filters, adding massive coloured borders surrounding the video, and many more have already been tried numerous times. These tricks work <em>sometimes</em>, but YouTube’s Content ID has only gotten better and better at working around these tricks. Any solution needs to make the copyrighted content completely invisible to Content ID, but this very often also means obscuring it for actual human viewers.</p>
+<p>But I’ve had an idea in the back of my mind since I saw a video that appeared in my recommendations a couple months ago. It’s a <a
+  href="https://en.wikipedia.org/wiki/Bad_Apple!!#Use_as_a_graphical_and_audio_test"
+  rel="nofollow"
+>Bad Apple video</a> which can only be viewed in HD. How this works is that 60fps YouTube videos don’t actually play at 60fps unless you view them at 720p or higher, so you can replace every other frame with an entirely black frame and the video will be invisible if you’re not watching with an HD quality setting.</p>
+<p>@embed:<a
+  href="https://www.youtube.com/watch?v=lwi7ofgZ8ME"
+  rel="nofollow"
+>https://www.youtube.com/watch?v=lwi7ofgZ8ME</a></p>
+<p>What if Content ID doesn’t scan the HD 60fps versions of videos? Would it then be completely oblivious to half of the frames of the video?</p>
+<p><strong>This isn’t a good idea</strong>. It would make it impossible to watch on low resolutions, harder to compress, makes the video uncomfortable to watch and could even cause watching the video to <em><strong>induce seizures</strong></em> in people with photosensitive epilepsy. This is not a good solution to the problem.</p>
+<p><em>But would it work though?</em></p>
+<h2><code>ffmpeg</code> is a challenge</h2>
+<p>I didn’t want to extract all the frames and then swap every other one with a black image, I thought that would probably take too long. Instead I looked into <code>ffmpeg</code>’s <code>geq</code> video filter. It allows you to make an expression which is ran per-pixel based on a few variables. <code>ffmpeg</code> also has <code>if</code> and <code>mod</code> functions, so this seemed like it would be a fairly easy task.</p>
+<pre class="shiki shiki-themes hazycore" style="background-color:#090514;color:#bbbbbb" tabindex="0"><code lang="sh"><span class="line"><span style="color:#B3FFCD">ffmpeg</span><span style="color:#F7A9D5"> -i</span><span style="color:#F7A9D5"> input.mp4</span><span style="color:#F7A9D5"> -y</span><span style="color:#F7A9D5"> -vf</span><span style="color:#F7A9D5"> "fps=60,geq=if(mod(N\,2)\,p(X\,Y))"</span><span style="color:#F7A9D5"> -preset</span><span style="color:#F7A9D5"> ultrafast</span><span style="color:#F7A9D5"> output.mp4</span></span></code></pre>
+<p><img
+  src="/blog/bypassing-content-id/green-frame.png"
+  alt="an ffplay window showing a dark green frame"
+></p>
+<p>Okay, so this doesn’t work how I thought it would. I assumed the color value <code>0</code> would be black, but it’s instead some dark muddy green colour? I think this is because <code>ffmpeg</code> is using the <a
+  href="https://en.wikipedia.org/wiki/YUV"
+  rel="nofollow"
+>YUV color model</a>. I’m not exactly sure how I should get it to use the color black for these frames using a YUV color value, but luckily the <code>geq</code> filter allows me to set expressions for the r, g, and b values of each pixel instead:</p>
+<pre class="shiki shiki-themes hazycore" style="background-color:#090514;color:#bbbbbb" tabindex="0"><code lang="sh"><span class="line"><span style="color:#B3FFCD">ffmpeg</span><span style="color:#F7A9D5"> -i</span><span style="color:#F7A9D5"> input.mp4</span><span style="color:#F7A9D5"> -y</span><span style="color:#F7A9D5"> -vf</span><span style="color:#F7A9D5"> "fps=60,geq=r=if(mod(N\,2)\,p(X\,Y)):g=if(mod(N\,2)\,p(X\,Y)):b=if(mod(N\,2)\,p(X\,Y))"</span><span style="color:#F7A9D5"> -preset</span><span style="color:#F7A9D5"> ultrafast</span><span style="color:#F7A9D5"> output.mp4</span></span></code></pre>
+<p>To be clear, this command sucks. It’s evaluating the expression on every single pixel in every single frame. I’m positive there are wayyyy better ways to do this, but it was taking me a while to figure this out to begin with so I’m willing to just go with this command for now. If anyone’s figured out a better way to do this in <code>ffmpeg</code>, please do message me!</p>
+<p>I’m getting 0.5x speeds out of this at best on my PC. To be fair, this PC’s specs are abysmal, so that wasn’t doing it any favours.</p>
+<h2>does this actually work</h2>
+<p>I sent the script off to my friend <a
+  href="https://tacohitbox.com"
+  rel="nofollow"
+>Aria</a>, who spends An Excessive Amount Of Time archiving media to various places including YouTube.</p>
+<p><img
+  src="/blog/bypassing-content-id/it-works.png"
+  alt="tacohitbox: NO FUCKING SHOT, DUDE THE CONSTANT FLICKERING ONE WORKED; hazy: HAHAHAA, send the fucking link; tacohitbox: THIS IS SO FUCKING FUNNY"
+></p>
+<p>Really?? This is so stupid. This is completely useless. No way this actually works. I’m running the command on a video real quick to try it out for myself.</p>
+<p><img
+  src="/blog/bypassing-content-id/no-family-guy-funnies.png"
+  alt="Screenshot of YouTube Studio, showing an audio claim for Family Guy - Life of Brian, blocking the video in all territories"
+></p>
+<p>Nooooo. I forgot about this. Some shows also do Content ID for the audio of episodes. Even if the video itself is completely undetectable, the video may still get claimed if it contains audio from something. So I’m going to have to do some more alterations to this video to make it get through Content ID.</p>
+<p>I think, for this demo, I’ll just put some music over the video. Music gets Content ID too, but music labels tend to not block videos which contain music, instead just taking ad revenue. I’m completely willing to give some music label all the ad revenue for this video so long as it’s visible.</p>
+<p><img
+  src="/blog/bypassing-content-id/kdenlive-drained.png"
+  alt="Screenshot of the Kdenlive video editor with an audio track filled with Bladee songs"
+></p>
+<p>I’m so sorry, but The Family Guy Funny Moments will have to become drained.</p>
+<h2>family guy funny moments (drained edition) (WARNING: FLASHING LIGHTS)</h2>
+<p>
+	<iframe src="https://www.youtube.com/embed/XrvbAuk42LE?start=450" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9; border-radius: 0.75rem"></iframe>
+</p>
+<p>this has got to be the worst thing i’ve ever made</p>
+<p>Drain gang music added to prevent audio claims. <a
+  href="https://open.spotify.com/playlist/6vi42OTDujqUXTfyd0DYNZ"
+  rel="nofollow"
+>Here’s the playlist, lol</a>. Hard-coded subtitles added to make this at least a little bit watchable. All the music I added has gotten detected by Content ID <em>with zero restrictions</em>, and the Family Guy episode itself hasn’t gotten claimed at all. This video can be watched globally. If I was in the YouTube Partner Program I could even earn advertising revenue from this video.</p>
+<p>And, in case anyone asks, yes, even with the drain gang music this video gets claimed if I don’t use the strobe effect:</p>
+<p><img
+  src="/blog/bypassing-content-id/blocked-drainer-nostrobe-upload.png"
+  alt="Screenshot showing 'family guy drainer nostrobe' blocked in YouTube Studio"
+></p>
+<p>With the strobe effect, the Family Guy Funny Moments are undetected by Content ID.</p>
+<p><img
+  src="/blog/bypassing-content-id/no-block.png"
+  alt="Screenshot showing the strobe effect video hasn't gotten blocked in YouTube Studio"
+></p>
+<h2>what have we learned</h2>
+<p>You can get around YouTube Content ID! As long as you’re willing to ignore these caveats:</p>
+<ul>
+<li>it’s uncomfortable to watch</li>
+<li>causes massive video file size</li>
+<li>requires exporting at 720p or higher at 60fps</li>
+<li>audio can still get claimed so you’ll have to distort that, cover it up with something else, or mute it entirely</li>
+<li><em><strong>could cause seizures</strong></em></li>
+</ul>
+<p>Please, please don’t start actually using this to evade Content ID. This isn’t a practical solution. Even if this idea were to inspire a more practical Content-ID-evading solution, always remember YouTube will simply patch it if it ever becomes widespread.</p>
+]]></content>
+		</entry><entry>
+			<title>Downloading YouTube subscriptions in CSV format with web scraping</title>
+			<link href="https://hazy.sh/blog/download-youtube-subscriptions"/>
+			<id>https://hazy.sh/blog/download-youtube-subscriptions</id>
+			<updated>2022-05-23T00:00:00.000Z</updated>
+			<published>2022-05-23T00:00:00.000Z</published>
+			<content type="html"><![CDATA[
+<p>Hey! This was posted <a
+  href="https://dev.to/hazy/downloading-your-youtube-subscriptions-in-csv-format-because-google-takeout-takes-too-long-5ca1"
+  rel="nofollow"
+>on my dev.to profile back in 2022</a>. Apparently it was shared on Reddit, and for archival’s sake I’m reposting it here, two years later! The rest of the article is pretty much just as I wrote it in 2022. Excuse poor writing and atrocious code formatting, it’s been a bit!</p>
+<hr>
+<p>I wanted to import my YouTube subscriptions into the <a
+  href="https://newpipe.net/"
+  rel="nofollow"
+>open-source Android YouTube client NewPipe</a>. The normal way to do that is to export the subscriptions from Google Takeout, a service Google provides to allow you to retrieve data about your account. NewPipe kindly explains the process:</p>
+<p><img
+  src="/blog/download-youtube-subscriptions/instructions.webp"
+  alt="Screenshot of the NewPipe app's explanation on how to use Google Takeout."
+></p>
+<p><em>Excuse the comic sans, it’s my favorite font.</em></p>
+<p>NewPipe’s instructions are as follows:</p>
+<blockquote>
+<p>Import YouTube subscriptions from Google takeout:</p>
+<ol>
+<li>Go to this URL: <a
+  href="https://takeout.google.com/takeout/custom/youtube"
+  rel="nofollow"
+>https://takeout.google.com/takeout/custom/youtube</a></li>
+<li>Log in when asked</li>
+<li>Click on “All data included”, then on “Deselect all”, then select only “subscriptions” and click “OK”</li>
+<li>Click on “Next step” and then on “Create export”</li>
+<li>Click on the “Download” button after it appears</li>
+<li>Click on IMPORT FILE below and select the downloaded .zip file</li>
+<li>[If the .zip import fails] Extract the .csv file (usually under “YouTube and YouTube Music/subscriptions/subscriptions.csv”), click on IMPORT FILE below and select the extracted csv file</li>
+</ol>
+</blockquote>
+<p>What they neglect to mention is that Google Takeout can take many hours to complete.</p>
+<p>I tried using Google Takeout, but after an hour of waiting, I decided I’d try something else. I would scrape the list of channels I’m subscribed to, and I’d save that list as a CSV file I can import into NewPipe.</p>
+<h2>Finding out how the Google Takeout CSV is formatted</h2>
+<p>In order to make my own file that NewPipe would accept as though it were a Google Takeout CSV, I had to find out the format Google Takeout uses.</p>
+<p>I found <a
+  href="https://github.com/TeamNewPipe/NewPipeExtractor/pull/709/commits/94a29fd63ff6bb0c1805c44ef5ebf4d915427454"
+  rel="nofollow"
+>the PR</a> that added the Google Takeout importing support. Inside that commit was a description of the file.</p>
+<pre class="shiki shiki-themes hazycore" style="background-color:#090514;color:#bbbbbb" tabindex="0"><code lang="java"><span class="line"><span style="color:#C7C7FF72;font-style:italic">// Expected format of CSV file:</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      Channel Id,Channel Url,Channel Title</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      UC1JTQBa5QxZCpXrFSkMxmPw,http://www.youtube.com/channel/UC1JTQBa5QxZCpXrFSkMxmPw,Raycevick</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      UCFl7yKfcRcFmIUbKeCA-SJQ,http://www.youtube.com/channel/UCFl7yKfcRcFmIUbKeCA-SJQ,Joji</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">//</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">// Notes:</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      It's always 3 columns</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      The first line is always a header</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      Header names are different based on the locale</span></span>
+<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      Fortunately the data is always the same order no matter what locale</span></span></code></pre>
+<p>This was simple enough. Now I needed to find out how to get a list of the Channel ID and Channel Title of each of the channels I’m subscribed to.</p>
+<h2>YouTube scraping</h2>
+<p>I found a page on YouTube <a
+  href="https://www.youtube.com/feed/channels"
+  rel="nofollow"
+>that lists all the channels you’re subscribed to</a>. I got to looking at how this page worked, and realized that the page stores data inside a variable called ytInitialData. This variable stores the list of the channels you’re subscribed to, as well as some other data. YouTube paginates the list, though, so the variable won’t always have everything right off the bat. YouTube loads more of the list whenever you scroll to the bottom of the page, though, which means I can just automate the scrolling.</p>
+<p>Another bit of data included in the ytInitialData variable is the API token required to load the rest of the list. And when the list is fully loaded, the token is removed from ytInitialData.</p>
+<p>This means I can check if that token exists in order to know whether to keep scrolling down.</p>
+<p>I wrote a script to scroll to the bottom of the page by checking the height of the container <code>&lt;div&gt;</code> and then scrolling with the function <code>window.scrollTo</code>.</p>
+<p>I then wrote a script to get the Channel IDs and Channel Titles from this list. I would also need the Channel URL, but this was as easy as adding the channel ID after the string <code>"http://www.youtube.com/channel/"</code>. It then joined the data of all the channels one by one. Finally, it would log the data to the console.</p>
+<p>I combined these scripts and ran them together. It worked.</p>
+<p>To make it just a bit more convenient, I made another script which made a <code>&lt;div&gt;</code> to put the CSV data in. This <code>&lt;div&gt;</code> would use <code>position: fixed</code> to cover the screen.</p>
+<p>To make it even easier to use, I decided to make a download button to save the text as a file so you wouldn’t need to copy-paste it yourself.</p>
+<h2>The script</h2>
+<p>Here’s my code:</p>
+<pre class="shiki shiki-themes hazycore" style="background-color:#090514;color:#bbbbbb" tabindex="0"><code lang="js"><span class="line"><span style="color:#CAAEFF">function</span><span style="color:#B3FFCD"> getLast</span><span style="color:#e4b3f0">(</span><span style="color:#e4b3f0">)</span><span style="color:#E8E8FF"> </span><span style="color:#e4b3f0">{</span></span>
+<span class="line"><span style="color:#CAAEFF">	return</span><span style="color:#8BC7FF"> ytInitialData</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">contents</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">twoColumnBrowseResultsRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">tabs</span><span style="color:#b3a3ee">[</span><span style="color:#BBBBBB">0</span><span style="color:#b3a3ee">]</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">tabRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">content</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">sectionListRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">contents</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">slice</span><span style="color:#b3a3ee">(</span></span>
+<span class="line"><span style="color:#E8E8FF">		-</span><span style="color:#BBBBBB">1</span></span>
+<span class="line"><span style="color:#E8E8FF">	</span><span style="color:#b3a3ee">)</span><span style="color:#b3a3ee">[</span><span style="color:#BBBBBB">0</span><span style="color:#b3a3ee">]</span></span>
+<span class="line"><span style="color:#e4b3f0">}</span></span>
+<span class="line"><span style="color:#CAAEFF">function</span><span style="color:#B3FFCD"> canContinue</span><span style="color:#e4b3f0">(</span><span style="color:#e4b3f0">)</span><span style="color:#E8E8FF"> </span><span style="color:#e4b3f0">{</span></span>
+<span class="line"><span style="color:#CAAEFF">	return</span><span style="color:#B3FFCD"> getLast</span><span style="color:#b3a3ee">(</span><span style="color:#b3a3ee">)</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">continuationItemRenderer</span><span style="color:#E8E8FF"> !=</span><span style="color:#BBBBBB"> null</span></span>
+<span class="line"><span style="color:#e4b3f0">}</span></span>
+<span class="line"><span style="color:#E8E8FF">;</span><span style="color:#e4b3f0">(</span><span style="color:#CAAEFF">async</span><span style="color:#E8E8FF"> </span><span style="color:#b3a3ee">(</span><span style="color:#b3a3ee">)</span><span style="color:#E8E8FF"> </span><span style="color:#CAAEFF">=</span><span style="color:#CAAEFF">></span><span style="color:#E8E8FF"> </span><span style="color:#b3a3ee">{</span></span>
+<span class="line"><span style="color:#CAAEFF">	while</span><span style="color:#E8E8FF"> </span><span style="color:#9fe6f3">(</span><span style="color:#B3FFCD">canContinue</span><span style="color:#9ff0ac">(</span><span style="color:#9ff0ac">)</span><span style="color:#9fe6f3">)</span><span style="color:#E8E8FF"> </span><span style="color:#9fe6f3">{</span></span>
+<span class="line"><span style="color:#CAAEFF">		let</span><span style="color:#8BC7FF"> current</span><span style="color:#E8E8FF"> =</span></span>
+<span class="line"><span style="color:#B3FFCD">			getLast</span><span style="color:#9ff0ac">(</span><span style="color:#9ff0ac">)</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">continuationItemRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">continuationEndpoint</span></span>
+<span class="line"><span style="color:#E8E8FF">				.</span><span style="color:#8BC7FF">continuationCommand</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">token</span></span>
+<span class="line"><span style="color:#B3FFCD">		scrollTo</span><span style="color:#9ff0ac">(</span><span style="color:#E8E8FF">0, </span><span style="color:#8BC7FF">document</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">getElementById</span><span style="color:#eef0a5">(</span><span style="color:#F7A9D5">'primary'</span><span style="color:#eef0a5">)</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">scrollHeight</span><span style="color:#9ff0ac">)</span></span>
+<span class="line"><span style="color:#CAAEFF">		while</span><span style="color:#E8E8FF"> </span><span style="color:#9ff0ac">(</span></span>
+<span class="line"><span style="color:#B3FFCD">			canContinue</span><span style="color:#eef0a5">(</span><span style="color:#eef0a5">)</span><span style="color:#E8E8FF"> &#x26;&#x26;</span></span>
+<span class="line"><span style="color:#8BC7FF">			current</span><span style="color:#E8E8FF"> ==</span></span>
+<span class="line"><span style="color:#B3FFCD">				getLast</span><span style="color:#eef0a5">(</span><span style="color:#eef0a5">)</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">continuationItemRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">continuationEndpoint</span></span>
+<span class="line"><span style="color:#E8E8FF">					.</span><span style="color:#8BC7FF">continuationCommand</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">token</span></span>
+<span class="line"><span style="color:#E8E8FF">		</span><span style="color:#9ff0ac">)</span><span style="color:#E8E8FF"> </span><span style="color:#9ff0ac">{</span></span>
+<span class="line"><span style="color:#CAAEFF">			await</span><span style="color:#CAAEFF"> new</span><span style="color:#78F9EB"> Promise</span><span style="color:#eef0a5">(</span><span style="color:#8BC7FF">r</span><span style="color:#CAAEFF"> =</span><span style="color:#CAAEFF">></span><span style="color:#B3FFCD"> setTimeout</span><span style="color:#e4b3f0">(</span><span style="color:#8BC7FF">r</span><span style="color:#E8E8FF">, 100</span><span style="color:#e4b3f0">)</span><span style="color:#eef0a5">)</span></span>
+<span class="line"><span style="color:#E8E8FF">		</span><span style="color:#9ff0ac">}</span></span>
+<span class="line"><span style="color:#E8E8FF">	</span><span style="color:#9fe6f3">}</span></span>
+<span class="line"><span style="color:#B3FFCD">	scrollTo</span><span style="color:#9fe6f3">(</span><span style="color:#E8E8FF">0, 0</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#CAAEFF">	let</span><span style="color:#8BC7FF"> floatDiv</span><span style="color:#E8E8FF"> = </span><span style="color:#8BC7FF">document</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">createElement</span><span style="color:#9fe6f3">(</span><span style="color:#F7A9D5">'div'</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#CAAEFF">	let</span><span style="color:#8BC7FF"> preText</span><span style="color:#E8E8FF"> = </span><span style="color:#8BC7FF">document</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">createElement</span><span style="color:#9fe6f3">(</span><span style="color:#F7A9D5">'pre'</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#8BC7FF">	floatDiv</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">setAttribute</span><span style="color:#9fe6f3">(</span></span>
+<span class="line"><span style="color:#F7A9D5">		'style'</span><span style="color:#E8E8FF">,</span></span>
+<span class="line"><span style="color:#F7A9D5">		`position: fixed;</span></span>
+<span class="line"><span style="color:#F7A9D5">		background: #0f0f0f;</span></span>
+<span class="line"><span style="color:#F7A9D5">		z-index: 100000;</span></span>
+<span class="line"><span style="color:#F7A9D5">		inset: 2rem;</span></span>
+<span class="line"><span style="color:#F7A9D5">		overflow: auto;</span></span>
+<span class="line"><span style="color:#F7A9D5">		font-size: 2rem;</span></span>
+<span class="line"><span style="color:#F7A9D5">		white-space: pre;</span></span>
+<span class="line"><span style="color:#F7A9D5">		color: white;</span></span>
+<span class="line"><span style="color:#F7A9D5">		padding: 1rem;`</span></span>
+<span class="line"><span style="color:#E8E8FF">	</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#CAAEFF">	let</span><span style="color:#8BC7FF"> csvText</span><span style="color:#E8E8FF"> =</span></span>
+<span class="line"><span style="color:#F7A9D5">		'Channel Id,Channel Url,Channel Title\n'</span><span style="color:#E8E8FF"> +</span></span>
+<span class="line"><span style="color:#8BC7FF">		ytInitialData</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">contents</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">twoColumnBrowseResultsRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">tabs</span><span style="color:#9fe6f3">[</span><span style="color:#E8E8FF">0</span><span style="color:#9fe6f3">]</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">tabRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">content</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">sectionListRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">contents</span></span>
+<span class="line"><span style="color:#E8E8FF">			.</span><span style="color:#B3FFCD">map</span><span style="color:#9fe6f3">(</span><span style="color:#8BC7FF">e</span><span style="color:#CAAEFF"> =</span><span style="color:#CAAEFF">></span><span style="color:#E8E8FF"> </span><span style="color:#9ff0ac">{</span></span>
+<span class="line"><span style="color:#CAAEFF">				if</span><span style="color:#E8E8FF"> </span><span style="color:#eef0a5">(</span><span style="color:#E8E8FF">!</span><span style="color:#8BC7FF">e</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">itemSectionRenderer</span><span style="color:#eef0a5">)</span><span style="color:#E8E8FF"> </span><span style="color:#CAAEFF">return</span></span>
+<span class="line"><span style="color:#CAAEFF">				return</span><span style="color:#8BC7FF"> e</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">itemSectionRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">contents</span><span style="color:#eef0a5">[</span><span style="color:#E8E8FF">0</span><span style="color:#eef0a5">]</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">shelfRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">content</span></span>
+<span class="line"><span style="color:#E8E8FF">					.</span><span style="color:#8BC7FF">expandedShelfContentsRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">items</span></span>
+<span class="line"><span style="color:#E8E8FF">			</span><span style="color:#9ff0ac">}</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#E8E8FF">			.</span><span style="color:#B3FFCD">flat</span><span style="color:#9fe6f3">(</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#E8E8FF">			.</span><span style="color:#B3FFCD">map</span><span style="color:#9fe6f3">(</span><span style="color:#8BC7FF">e</span><span style="color:#CAAEFF"> =</span><span style="color:#CAAEFF">></span><span style="color:#E8E8FF"> </span><span style="color:#9ff0ac">{</span></span>
+<span class="line"><span style="color:#CAAEFF">				if</span><span style="color:#E8E8FF"> </span><span style="color:#eef0a5">(</span><span style="color:#8BC7FF">e</span><span style="color:#E8E8FF"> &#x26;&#x26; </span><span style="color:#8BC7FF">e</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">channelRenderer</span><span style="color:#eef0a5">)</span></span>
+<span class="line"><span style="color:#CAAEFF">					return</span><span style="color:#F7A9D5"> `</span><span style="color:#7C7C97">${</span><span style="color:#8BC7FF">e</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">channelRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">channelId</span><span style="color:#7C7C97">}</span><span style="color:#F7A9D5">,http://www.youtube.com/channel/</span><span style="color:#7C7C97">${</span><span style="color:#8BC7FF">e</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">channelRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">channelId</span><span style="color:#7C7C97">}</span><span style="color:#F7A9D5">,</span><span style="color:#7C7C97">${</span><span style="color:#8BC7FF">e</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">channelRenderer</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">title</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">simpleText</span><span style="color:#7C7C97">}</span><span style="color:#F7A9D5">`</span></span>
+<span class="line"><span style="color:#CAAEFF">				return</span><span style="color:#F7A9D5"> ''</span></span>
+<span class="line"><span style="color:#E8E8FF">			</span><span style="color:#9ff0ac">}</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#E8E8FF">			.</span><span style="color:#B3FFCD">join</span><span style="color:#9fe6f3">(</span><span style="color:#F7A9D5">'\n'</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#8BC7FF">	preText</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">innerText</span><span style="color:#E8E8FF"> = </span><span style="color:#8BC7FF">csvText</span></span>
+<span class="line"><span style="color:#CAAEFF">	let</span><span style="color:#8BC7FF"> downloadLink</span><span style="color:#E8E8FF"> = </span><span style="color:#8BC7FF">document</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">createElement</span><span style="color:#9fe6f3">(</span><span style="color:#F7A9D5">'a'</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#8BC7FF">	downloadLink</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">innerText</span><span style="color:#E8E8FF"> = </span><span style="color:#F7A9D5">'Download CSV'</span></span>
+<span class="line"><span style="color:#8BC7FF">	downloadLink</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">setAttribute</span><span style="color:#9fe6f3">(</span><span style="color:#F7A9D5">'target'</span><span style="color:#E8E8FF">, </span><span style="color:#F7A9D5">'_blank'</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#8BC7FF">	downloadLink</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">setAttribute</span><span style="color:#9fe6f3">(</span></span>
+<span class="line"><span style="color:#F7A9D5">		'style'</span><span style="color:#E8E8FF">,</span></span>
+<span class="line"><span style="color:#F7A9D5">		`color: #bf3838;</span></span>
+<span class="line"><span style="color:#F7A9D5">		font-weight: bold;</span></span>
+<span class="line"><span style="color:#F7A9D5">		margin-bottom: 1rem;</span></span>
+<span class="line"><span style="color:#F7A9D5">		display: block;</span></span>
+<span class="line"><span style="color:#F7A9D5">		padding: 1rem;</span></span>
+<span class="line"><span style="color:#F7A9D5">		border-radius: 0.5rem;</span></span>
+<span class="line"><span style="color:#F7A9D5">		border: 2px solid #bf3838;</span></span>
+<span class="line"><span style="color:#F7A9D5">		width: fit-content;</span></span>
+<span class="line"><span style="color:#F7A9D5">		text-decoration: none;`</span></span>
+<span class="line"><span style="color:#E8E8FF">	</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#CAAEFF">	var</span><span style="color:#8BC7FF"> t</span><span style="color:#E8E8FF"> = </span><span style="color:#CAAEFF">new</span><span style="color:#B3FFCD"> Blob</span><span style="color:#9fe6f3">(</span><span style="color:#9ff0ac">[</span><span style="color:#8BC7FF">csvText</span><span style="color:#9ff0ac">]</span><span style="color:#E8E8FF">, </span><span style="color:#9ff0ac">{</span><span style="color:#E8E8FF"> </span><span style="color:#8BC7FF">type</span><span style="color:#E8E8FF">: </span><span style="color:#F7A9D5">'text/plain'</span><span style="color:#E8E8FF"> </span><span style="color:#9ff0ac">}</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#8BC7FF">	downloadLink</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">href</span><span style="color:#E8E8FF"> = </span><span style="color:#8BC7FF">window</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">URL</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">createObjectURL</span><span style="color:#9fe6f3">(</span><span style="color:#8BC7FF">t</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#8BC7FF">	floatDiv</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">appendChild</span><span style="color:#9fe6f3">(</span><span style="color:#8BC7FF">downloadLink</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#8BC7FF">	floatDiv</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">appendChild</span><span style="color:#9fe6f3">(</span><span style="color:#8BC7FF">preText</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#8BC7FF">	document</span><span style="color:#E8E8FF">.</span><span style="color:#8BC7FF">body</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">appendChild</span><span style="color:#9fe6f3">(</span><span style="color:#8BC7FF">floatDiv</span><span style="color:#9fe6f3">)</span></span>
+<span class="line"><span style="color:#b3a3ee">}</span><span style="color:#e4b3f0">)</span><span style="color:#e4b3f0">(</span><span style="color:#e4b3f0">)</span></span></code></pre>
+<p>You can run this in DevTools at <a
+  href="https://www.youtube.com/feed/channels"
+  rel="nofollow"
+>youtube.com/feed/channels</a>. You can then save the file by clicking “Download CSV”.</p>
+<p><img
+  src="/blog/download-youtube-subscriptions/screenshot.jpeg"
+  alt="A red button reading 'Download CSV', above a list of YouTube Channel IDs and Channel URLs."
+></p>
+<h2>Conclusion</h2>
+<p>By the time I had finished writing the script, Google Takeout still hadn’t sent me a download of my subscriptions list. I eventually received this download hours later, but by that point I had already imported my own list into NewPipe and no longer needed theirs.</p>
+<p>My guess is that Google Takeout runs on a queue, sending one person their data and then the next, rather than working on each request immediately.</p>
+<p>I hope you find my script useful. If you make any improvements, you can let me know in the comments of my <a
+  href="https://gist.github.com/hazycora/bc41e673aff4c9c7846d80e145574285"
+  rel="nofollow"
+>GitHub gist</a> about this script.</p>
+]]></content>
+		</entry></feed>
