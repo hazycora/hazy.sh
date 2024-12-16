@@ -97,7 +97,7 @@
 			<li>
 				<a href="https://besties.house">
 					<img src="/assets/besties.svg" aria-hidden="true" alt="" />
-					<span class="title">besties.house</span>
+					<span class="title">besties</span>
 					<p>silly group chat and coder collective</p>
 					<span class="time-span">2020 -</span>
 				</a>
