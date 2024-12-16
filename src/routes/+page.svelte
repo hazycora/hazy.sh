@@ -47,13 +47,13 @@
 		content="i'm hazel - a web developer who's been making sites since 2019."
 	/>
 	<meta property="og:image" content="/avatar.webp" />
-	<meta property="twitter:card" content="summary" />
-	<meta property="twitter:title" content="hazy.sh" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="hazy.sh" />
 	<meta
-		property="twitter:description"
+		name="twitter:description"
 		content="i'm hazel - a web developer who's been making sites since 2019."
 	/>
-	<meta property="twitter:image" content="/avatar.webp" />
+	<meta name="twitter:image" content="/avatar.webp" />
 	<link rel="pgpkey" href="/key.asc" />
 </svelte:head>
 

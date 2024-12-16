@@ -28,17 +28,17 @@
 	<meta property="og:description" content={description} />
 	<meta name="fediverse:creator" content="@h@besties.house" />
 	<meta
-		property="twitter:card"
+		name="twitter:card"
 		content={image ? 'summary_large_image' : 'summary'}
 	/>
-	<meta property="twitter:title" content={title} />
-	<meta property="twitter:site" content="@hazycora" />
-	<meta property="twitter:description" content={description} />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:site" content="@hazycora" />
+	<meta name="twitter:description" content={description} />
 	{#if image}
 		<meta property="og:image" content={image} />
 		<meta property="og:image:alt" content={imageAlt} />
-		<meta property="twitter:image" content={image} />
-		<meta property="twitter:image:alt" content={imageAlt} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:image:alt" content={imageAlt} />
 	{/if}
 </svelte:head>
 

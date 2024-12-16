@@ -17,9 +17,9 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="blog - hazy.sh" />
 	<meta property="og:description" content="hazel's blog for whatever" />
-	<meta property="twitter:card" content="summary" />
-	<meta property="twitter:title" content="blog - hazy.sh" />
-	<meta property="twitter:description" content="hazel's blog for whatever" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="blog - hazy.sh" />
+	<meta name="twitter:description" content="hazel's blog for whatever" />
 </svelte:head>
 
 <div class="page">
