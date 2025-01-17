@@ -2,9 +2,9 @@
 	const props = $props()
 </script>
 
-<img
+<enhanced:img
 	class="avatar"
-	src="/avatar.webp"
+	src="../../../static/avatar.avif"
 	alt="A pink cat wearing a purple witch hat"
 	{...props}
 />
