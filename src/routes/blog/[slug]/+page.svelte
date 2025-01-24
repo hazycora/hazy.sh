@@ -184,6 +184,7 @@
 			:global(.avatar) {
 				float: right;
 				width: 2.75rem;
+				height: 2.75rem;
 				border-radius: 25%;
 				margin-inline-start: 0.25rem;
 				margin-block-end: 0.25rem;
