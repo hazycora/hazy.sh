@@ -1,0 +1,5 @@
+{
+	"hstsMaxAge": 63072000,
+	"hstsIncludeSubdomains": true,
+	"hstsPreload": true
+}
