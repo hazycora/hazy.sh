@@ -53,7 +53,7 @@
 			<li>Sole developer of website hosting service <i>pages.gay</i></li>
 			<li>
 				Created developer tooling for the collective to aid in the creation and
-				maintenance of projects
+				maintenance of projects, including CI workflows, custom Vite plugins, and TypeScript libraries
 			</li>
 			<li>
 				Maintaining internal services including the organisation's Matrix & XMPP
