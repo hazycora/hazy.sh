@@ -14,6 +14,11 @@
 	{#if post.frontmatter.image}
 		<img src={post.frontmatter.image} alt={post.frontmatter.imageAlt} />
 	{/if}
+	{#if post.frontmatter.archive == true}
+		<ul class="tags">
+			<span class="archive">archive</span>
+		</ul>
+	{/if}
 	<span class="title">{post.frontmatter.title}</span>
 	{#if date}
 		<span class="date">
@@ -42,6 +47,26 @@
 		}
 	}
 
+	.tags {
+		font-size: 0.875rem;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+		padding: 0;
+		margin: 0;
+		> * {
+			display: inline-block;
+			padding: 0 0.125rem;
+			background-color: var(--tag-bg-clr);
+			color: var(--tag-clr);
+			border-radius: 0.25rem;
+			&.archive {
+				background-color: var(--archive-bg-clr);
+				color: var(--archive-clr);
+			}
+		}
+	}
 	.title {
 		display: block;
 		font-weight: 800;

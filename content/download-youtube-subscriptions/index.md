@@ -2,6 +2,7 @@
 title: Downloading YouTube subscriptions in CSV format with web scraping
 description: Because Google Takeout takes too long
 date: 2022-05-23
+archive: true
 ---
 
 Hey! This was posted [on my dev.to profile back in 2022](https://dev.to/hazy/downloading-your-youtube-subscriptions-in-csv-format-because-google-takeout-takes-too-long-5ca1). Apparently it was shared on Reddit, and for archival's sake I'm reposting it here, two years later! The rest of the article is pretty much just as I wrote it in 2022. Excuse poor writing and atrocious code formatting, it's been a bit!

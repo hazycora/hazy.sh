@@ -1,5 +1,5 @@
 import { execSync } from 'child_process'
-import { posts, type Post } from '$lib/server/blog'
+import { getPosts, type Post } from '$lib/server/blog'
 import { compile } from '$lib/server/compile-md'
 export const prerender = true
 
@@ -12,6 +12,8 @@ export async function GET() {
 		'Cache-Control': `max-age=0, s-max-age=${600}`,
 		'Content-Type': 'application/xml'
 	}
+
+	const posts = await getPosts(true)
 
 	const xml = await generateXML(posts)
 

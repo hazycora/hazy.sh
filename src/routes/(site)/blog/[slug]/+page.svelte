@@ -1,10 +1,10 @@
 <script lang="ts">
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import Postscript from '$lib/components/Postscript.svelte'
-	import Avatar from '$lib/components/Avatar.svelte'
 	import dayjs from 'dayjs'
 	import { DATE_FORMAT } from '$lib/dayjs.js'
-	import SidebarPosts from '$lib/components/SidebarPosts.svelte'
+	import SidebarPosts from '$lib/components/Sidebar/SidebarPosts.svelte'
+	import SidebarBio from '$lib/components/Sidebar/SidebarBio.svelte'
 
 	const { data } = $props()
 </script>
@@ -21,7 +21,7 @@
 <article>
 	<div class="frontmatter">
 		<nav>
-			<a href="/">hazel cora</a> · <a href="/blog">blog</a>
+			<a href="/">Hazel Cora</a> · <a href="/blog">blog</a>
 		</nav>
 		<h1 class="title">{data.post.frontmatter.title}</h1>
 		<p class="description">{data.post.frontmatter.description}</p>
@@ -30,6 +30,16 @@
 
 	<div class="things">
 		<div class="body">
+			{#if data.post.frontmatter.archive}
+				<p class="archive-warning">
+					This article remains as an archive. You can check what I'm currently
+					up to either <a href="https://social.besties.house/@h"
+						>on the Fediverse</a
+					>
+					or by checking for <a href="/blog">new posts on this blog</a>.
+				</p>
+			{/if}
+
 			<div class="md">
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 				{@html data.html}
@@ -43,7 +53,7 @@
 		<aside>
 			<div class="this-article">
 				<nav>
-					<a href="/">hazel cora</a> · <a href="/blog">blog</a>
+					<a href="/">Hazel Cora</a> · <a href="/blog">blog</a>
 				</nav>
 				<p class="title">{data.post.frontmatter.title}</p>
 				{#if data.post.frontmatter.description}
@@ -52,18 +62,11 @@
 			</div>
 
 			<div class="other-things">
-				<div class="me">
-					<Avatar />
+				<SidebarBio />
 
-					<p class="bio">
-						Hey, I'm Hazel&lt;3 I'm a dev and sysadmin making things with Go,
-						TypeScript, and Svelte. Most people know me for hosting <a
-							href="https://git.gay">git.gay</a
-						>.
-					</p>
-				</div>
+				<hr />
 
-				<SidebarPosts heading="Other posts" posts={data.aside} />
+				<SidebarPosts link heading="Other posts" posts={data.aside} />
 			</div>
 		</aside>
 	</div>
@@ -118,6 +121,13 @@
 		}
 	}
 
+	.archive-warning {
+		color: var(--text-clr);
+		background-color: var(--archive-bg-clr);
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+	}
+
 	@keyframes fadein {
 		10% {
 			transform: translateY(-1rem);
@@ -157,7 +167,7 @@
 			animation: slidein linear both;
 			animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 			animation-timeline: --frontmatter;
-			animation-range: exit 0% exit 160%;
+			animation-range: exit 0% exit 100%;
 
 			border-block-end: 1px solid var(--border-clr);
 			margin-block-end: 1rem;
@@ -180,23 +190,12 @@
 			}
 		}
 
-		.me {
-			:global(.avatar) {
-				float: right;
-				width: 2.75rem;
-				height: 2.75rem;
-				border-radius: 25%;
-				margin-inline-start: 0.25rem;
-				margin-block-end: 0.25rem;
-			}
-		}
-
 		> :not(.this-article) {
 			transform-origin: top center;
 			opacity: 0;
 			animation: fadein ease-out both;
 			animation-timeline: --frontmatter;
-			animation-range: exit 150% exit 300%;
+			animation-range: exit 100% exit 200%;
 		}
 	}
 
@@ -216,30 +215,28 @@
 		line-height: 1.6;
 		overflow: hidden;
 
-		.md {
-			:global(pre) {
-				white-space: pre-wrap;
-				word-break: break-all;
-			}
-			:global(a:not(:hover)) {
-				text-decoration-color: var(--link-clr);
-			}
-			:global(> p) {
-				margin-block: 2rem;
-			}
-			:global(> :first-child) {
-				margin-block-start: 0;
-			}
-			:global(> p:has(> img:only-child)) {
-			}
-			:global(> p > img:only-child) {
-				display: block;
-				margin-inline: auto;
-				border-radius: 0.25rem;
-			}
-			:global(> p > img:only-child) {
-				max-height: 80vh;
-			}
+		:global(pre) {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+		:global(a:not(:hover)) {
+			text-decoration-color: var(--link-clr);
+		}
+		:global(> p) {
+			margin-block: 2rem;
+		}
+		:global(> :first-child) {
+			margin-block-start: 0;
+		}
+		:global(> p:has(> img:only-child)) {
+		}
+		:global(> p > img:only-child) {
+			display: block;
+			margin-inline: auto;
+			border-radius: 0.25rem;
+		}
+		:global(> p > img:only-child) {
+			max-height: 80vh;
 		}
 	}
 </style>

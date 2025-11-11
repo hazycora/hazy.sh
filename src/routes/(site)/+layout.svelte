@@ -1,6 +1,6 @@
 <script lang="ts">
-	import '../css/app.pcss'
-	import '../css/fonts.pcss'
+	import '../../css/app.pcss'
+	import '../../css/fonts.pcss'
 </script>
 
 <svelte:head>

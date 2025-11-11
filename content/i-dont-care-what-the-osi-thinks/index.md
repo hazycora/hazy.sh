@@ -2,6 +2,7 @@
 title: I kinda just don’t care what the OSI thinks
 description: My projects are open for the greater good, not for military, policing, or bigots
 date: 2024-05-03
+archive: true
 ---
 
 I’ve begun using the [Opinionated Queer License](https://oql.avris.it/) for many of my FOSS projects. It prohibits use of the projects by corporations which pay workers unfairly, prohibits use in military tech or for policing, and prohibits any bigoted use.

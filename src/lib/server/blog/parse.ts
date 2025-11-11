@@ -1,7 +1,7 @@
 import type { Post, PostSummary } from '.'
 
 export interface Frontmatter {
-	[key: string]: string | undefined
+	[key: string]: string | undefined | boolean
 
 	title?: string
 	description?: string
@@ -9,9 +9,12 @@ export interface Frontmatter {
 	contentWarning?: string
 	image?: string
 	imageAlt?: string
+	archive?: boolean
 }
 
 const FRONTMATTER_RE = /^---((?:\n.*)*?)\n---\n/
+
+const boolKeys = ['archive']
 
 function parseFrontmatter(markdown: string) {
 	const frontmatter: Frontmatter = {}
@@ -33,7 +36,11 @@ function parseFrontmatter(markdown: string) {
 		const key = execResults[1].trim()
 		const value = execResults[2].trim()
 
-		frontmatter[key] = value
+		if (boolKeys.includes(key)) {
+			frontmatter[key] = !!value
+		} else {
+			frontmatter[key] = value
+		}
 	}
 
 	return frontmatter

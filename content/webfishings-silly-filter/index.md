@@ -2,6 +2,7 @@
 title: Webfishing's bizarre profanity filter
 description: Canadians are being CENSORED by the adorable furry fishing game
 date: 2024-11-11
+archive: true
 ---
 
 **Update:** The developer, lamedev, [knows of this](https://lethallava.land/notes/a0hatpsc0g)! I expect it'll be fixed in the next update. Also, my guess for the source of the list [was correct](https://lethallava.land/notes/a0hayv2l1n).

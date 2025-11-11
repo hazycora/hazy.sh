@@ -22,8 +22,6 @@ export async function getPost(slug: string): Promise<Post> {
 	return parsePost(await postText.text(), slug, true)
 }
 
-export const posts = await getPosts(true)
-
 export async function getPosts(_includeContent?: false): Promise<PostSummary[]>
 export async function getPosts(_includeContent: true): Promise<Post[]>
 export async function getPosts(

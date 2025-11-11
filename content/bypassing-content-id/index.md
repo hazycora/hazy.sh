@@ -3,6 +3,7 @@ title: Bypassing YouTube Content-ID with flashing frames
 description: Uploading copyrighted content to YouTube at the cost of epileptic seizures
 date: 2023-05-03
 contentWarning: Flashing lights
+archive: true
 ---
 
 Anyone who archives media to YouTube knows the struggle that is working around YouTube's Content ID system. It's the system which detects copyrighted material in order to allow media companies to earn advertising revenue from videos which use their content, but it also allows these companies to outright block videos from many parts of the world. Of course, YouTube couldn’t exist without Content ID, but that doesn’t make it any less frustrating.

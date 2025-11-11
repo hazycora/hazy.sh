@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ArticleItem from '$lib/components/ArticleItem.svelte'
+	import ArticleItem from '$lib/components/Article/ArticleItem.svelte'
 	import MetaTags from '$lib/components/MetaTags.svelte'
 	import Postscript from '$lib/components/Postscript.svelte'
 
@@ -16,20 +16,11 @@
 
 <main>
 	<nav>
-		<a href="/">hazel cora</a> · <a href="/blog">blog</a>
+		<a href="/">Hazel Cora</a> · <a href="/blog">blog</a>
 	</nav>
 
-	<p>
-		Occasionally I write about the things I'm making, my experiences, and other
-		things I find interesting.
-	</p>
-	<p>
-		The blog doesn't have any sort of schedule, so if you want to be sure to
-		catch the next post you should <a href="https://social.besties.house/@h"
-			>follow me on the fediverse</a
-		>
-		or subscribe to <a href="/rss">the blog's RSS feed</a>!
-	</p>
+	<p>Sometimes I write things.</p>
+	<p>Once in a blue moon. No schedule. I'm busy!</p>
 
 	<ul>
 		{#each data.posts as post, i}

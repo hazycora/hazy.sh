@@ -4,6 +4,7 @@ imageAlt: A Tweet displaying a summary card linking to discord.com
 title: Twitter's cards have a bug that makes phishing easy
 description: Sites linked to on Twitter can pretend to be any other URL
 date: 2023-06-03
+archive: true
 ---
 
 (I'm not the first to find this problem. It's been known since 2019, I link to other articles and blog posts that came before me at the end.)

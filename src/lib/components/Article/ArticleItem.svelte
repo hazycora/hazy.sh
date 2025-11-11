@@ -17,6 +17,11 @@
 	{#if post.frontmatter.image}
 		<img src={post.frontmatter.image} alt={post.frontmatter.imageAlt} />
 	{/if}
+	{#if post.frontmatter.archive == true}
+		<ul class="tags">
+			<span class="archive">archive</span>
+		</ul>
+	{/if}
 	<span class="title">{post.frontmatter.title}</span>
 	{#if post.frontmatter.description}
 		<p class="description">{post.frontmatter.description}</p>
@@ -31,8 +36,9 @@
 <style lang="postcss">
 	a {
 		display: block;
-		padding: 0.25rem;
+		padding: 0.5rem 0.5rem;
 		border-radius: 0.25rem;
+		border: 1px solid var(--border-clr);
 
 		text-decoration: none;
 		overflow: hidden;
@@ -67,11 +73,30 @@
 		}
 	}
 
+	.tags {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+		padding: 0;
+		margin: 0;
+		> * {
+			display: inline-block;
+			padding: 0.125rem;
+			background-color: var(--tag-bg-clr);
+			color: var(--tag-clr);
+			border-radius: 0.25rem;
+			&.archive {
+				background-color: var(--archive-bg-clr);
+				color: var(--archive-clr);
+			}
+		}
+	}
 	.title {
 		display: block;
-		font-weight: 800;
-		color: var(--text-clr);
-		font-size: 1.625rem;
+		font-weight: 600;
+		color: var(--heading-clr);
+		font-size: 1.5rem;
 	}
 	.date {
 		font-size: 0.75rem;

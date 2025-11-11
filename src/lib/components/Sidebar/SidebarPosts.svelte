@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PostSummary } from '$lib/server/blog'
-	import ArticleItemSmall from './ArticleItemSmall.svelte'
+	import ArticleItemSmall from '$lib/components/Article/ArticleItemSmall.svelte'
 
 	const {
 		posts,
