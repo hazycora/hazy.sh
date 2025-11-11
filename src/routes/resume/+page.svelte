@@ -2,13 +2,9 @@
 	import MetaTags from '$lib/components/MetaTags.svelte'
 </script>
 
-<MetaTags
-	value={{
-		title: 'Hazel Cora',
-		description: 'Hi<3',
-		image: '/avatar.webp'
-	}}
-/>
+<svelte:head>
+	<title>Hazel Cora - Resume</title>
+</svelte:head>
 
 <article>
 	<header>
