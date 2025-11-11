@@ -4,12 +4,28 @@
 		<link href="https://hazy.sh/rss" rel="self"/>
 		<link href="https://hazy.sh/blog"/>
 		<id>https://hazy.sh/rss</id>
-		<updated>2025-03-29T05:18:26.000Z</updated>
+		<updated>2025-11-11T03:26:33.000Z</updated>
 		<author>
 			<name>Hazel Cora</name>
 		</author>
 		<subtitle>hazel's blog for whatever</subtitle>
 		<generator>https://git.gay/h/hazysh</generator><entry>
+			<title>2025 Wrapped and the future of Hazel Cora</title>
+			<link href="https://hazy.sh/blog/2025-wrapped"/>
+			<id>https://hazy.sh/blog/2025-wrapped</id>
+			<updated>2025-11-10T00:00:00.000Z</updated>
+			<published>2025-11-10T00:00:00.000Z</published>
+			<content type="html"><![CDATA[
+<p>Hey! It’s been a year since my last article, and what a year it has been…</p>
+<p>This time last year, I was really excited for 2025, to improve the services I run and in trying to find work for myself. Neither really went according to plan. I had a pretty crazy December/January that I won’t bother getting into (real ones know…), and the future was looking alright. Then, I started the year having to find new hosting for my services due to instability of the hosting provider I was with at the time, which was delayed again and again as our previous host kept promising to fix our issues. By the time we could finally get on new hosting, it had been months that my services were unreliable, and I felt pretty miserable for letting my users down. At the same time, I was dealing with the bureaucracy of getting my legal name change done, which took longer than I had hoped.</p>
+<p>From ages ~13 to ~17, my personal life was extremely messy, and ironically that made me put way more time into my work as an escape. As things have calmed down in my personal life, I really hoped I’d get to devote even more time to my work, but that hasn’t turned out to be the reality. Turns out spending 4 years oscillating between a chaotic family and school life and then spending all the rest of my time running services so many depend on me for with hardly any time spent on anything else really burned me out! I always dreamed of my 18th giving me freedom, and that I’d escape my current living situation, and somehow find stability elsewhere, and still find time for all the things I manage. Of course, I always kinda knew that was never gonna be reality, and that it’d take more time, but I’d be lying if I said it didn’t get to me a little bit.</p>
+<p>I turned 19 last month, and I’ve spent the past few weeks since trying to take better care of myself. I recognise I can’t expect myself at this age to have my life all figured out, so I’m trying to take it slow. Giving myself more routine, getting out a bit more, not to mention getting on better meds— It’s all helped a lot.</p>
+<p>Anyway, I’m gonna be doing more work on my services now :) Part-time, cause I’m also looking for a job! Thanks to everyone who’s stuck by me, most of all June, Aly, <a
+  href="https://soundcloud.com/nocturnnne"
+  rel="nofollow"
+>Ellie</a>, and <a href="https://tacohitbox.com" rel="nofollow">Aria</a>!</p>
+]]></content>
+		</entry><entry>
 			<title>Webfishing's bizarre profanity filter</title>
 			<link href="https://hazy.sh/blog/webfishings-silly-filter"/>
 			<id>https://hazy.sh/blog/webfishings-silly-filter</id>
@@ -126,13 +142,13 @@ But the user isn’t sent directly to the destination- When someone clicks one o
 <span class="line"><span style="color:#E8E8FF">		.</span><span style="color:#B3FFCD">startsWith</span><span style="color:#9fe6f3">(</span><span style="color:#F7A9D5">'Twitterbot/'</span><span style="color:#9fe6f3">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#CAAEFF">	if</span><span style="color:#E8E8FF"> </span><span style="color:#9fe6f3">(</span><span style="color:#8BC7FF">detectedTwitter</span><span style="color:#9fe6f3">)</span><span style="color:#E8E8FF"> </span><span style="color:#9fe6f3">{</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">		// redirect to the page to be displayed on Twitter</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">		// redirect to the page to be displayed on Twitter</span></span>
 <span class="line"><span style="color:#8BC7FF">		res</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">redirect</span><span style="color:#9ff0ac">(</span><span style="color:#F7A9D5">'https://discord.com'</span><span style="color:#9ff0ac">)</span></span>
 <span class="line"><span style="color:#CAAEFF">		return</span></span>
 <span class="line"><span style="color:#E8E8FF">	</span><span style="color:#9fe6f3">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">	// handle request for other users</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">	// malicious sites could serve a phishing site right here</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">	// handle request for other users</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">	// malicious sites could serve a phishing site right here</span></span>
 <span class="line"><span style="color:#8BC7FF">	res</span><span style="color:#E8E8FF">.</span><span style="color:#B3FFCD">redirect</span><span style="color:#9fe6f3">(</span><span style="color:#F7A9D5">'https://example.com'</span><span style="color:#9fe6f3">)</span></span>
 <span class="line"><span style="color:#b3a3ee">}</span><span style="color:#e4b3f0">)</span></span></code></pre>
 <p><img
@@ -295,16 +311,16 @@ But the user isn’t sent directly to the destination- When someone clicks one o
   href="https://github.com/TeamNewPipe/NewPipeExtractor/pull/709/commits/94a29fd63ff6bb0c1805c44ef5ebf4d915427454"
   rel="nofollow"
 >the PR</a> that added the Google Takeout importing support. Inside that commit was a description of the file.</p>
-<pre class="shiki shiki-themes hazycore" style="background-color:#090514;color:#bbbbbb" tabindex="0"><code lang="java"><span class="line"><span style="color:#C7C7FF72;font-style:italic">// Expected format of CSV file:</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      Channel Id,Channel Url,Channel Title</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      UC1JTQBa5QxZCpXrFSkMxmPw,http://www.youtube.com/channel/UC1JTQBa5QxZCpXrFSkMxmPw,Raycevick</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      UCFl7yKfcRcFmIUbKeCA-SJQ,http://www.youtube.com/channel/UCFl7yKfcRcFmIUbKeCA-SJQ,Joji</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">//</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">// Notes:</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      It's always 3 columns</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      The first line is always a header</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      Header names are different based on the locale</span></span>
-<span class="line"><span style="color:#C7C7FF72;font-style:italic">//      Fortunately the data is always the same order no matter what locale</span></span></code></pre>
+<pre class="shiki shiki-themes hazycore" style="background-color:#090514;color:#bbbbbb" tabindex="0"><code lang="java"><span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">// Expected format of CSV file:</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">//      Channel Id,Channel Url,Channel Title</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">//      UC1JTQBa5QxZCpXrFSkMxmPw,http://www.youtube.com/channel/UC1JTQBa5QxZCpXrFSkMxmPw,Raycevick</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">//      UCFl7yKfcRcFmIUbKeCA-SJQ,http://www.youtube.com/channel/UCFl7yKfcRcFmIUbKeCA-SJQ,Joji</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">//</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">// Notes:</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">//      It's always 3 columns</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">//      The first line is always a header</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">//      Header names are different based on the locale</span></span>
+<span class="line"><span style="color:#C7C7FF72;--shiki-dark-font-style:italic">//      Fortunately the data is always the same order no matter what locale</span></span></code></pre>
 <p>This was simple enough. Now I needed to find out how to get a list of the Channel ID and Channel Title of each of the channels I’m subscribed to.</p>
 <h2>YouTube scraping</h2>
 <p>I found a page on YouTube <a
