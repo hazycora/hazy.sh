@@ -19,7 +19,7 @@ function link(url: string, text: string) {
 function hiddenAnsi(body: string, ansiText: string) {
 	const doctype = body.match(/.*?<!doctype(?:\s.*?)?>/i)?.[0] ?? ''
 	const noDoctype = doctype ? body.replace(doctype, '') : body
-	return `${doctype}<!--${csi}1K${csi}G${csi}?1049h${csi}?25l${hidden}-->${noDoctype}<!--${csi}?25h${reset}${csi}?1049l${ansiText}${hidden}--><div hidden>meow${reset}\n`
+	return `${doctype}<!--${csi}1K${csi}G${csi}?1049h${csi}?25l${hidden}-->${noDoctype}<!--${csi}?25h${reset}${csi}?1049l${ansiText}${hidden}${reset}\n`
 }
 
 export const handle: Handle = async ({ event, resolve }) => {
