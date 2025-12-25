@@ -16,16 +16,18 @@ function link(url: string, text: string) {
 	return `${osc}8;;${url}${st}${text}${osc}8;;${st}`
 }
 
-function hiddenAnsi(text: string) {
-	return `<!--\n${home}${text}${hidden}--><div hidden>meow${reset}\n`
+function hiddenAnsi(body: string, ansiText: string) {
+	const doctype = body.match(/.*?<!doctype(?:\s.*?)?>/i)?.[0] ?? ''
+	const noDoctype = doctype ? body.replace(doctype, '') : body
+	return `${doctype}<!--${home}${hidden}-->${noDoctype}<!--\n${reset}${home}${ansiText}${hidden}--><div hidden>meow${reset}\n`
 }
 
 export const handle: Handle = async ({ event, resolve }) => {
 	const response = await resolve(event)
 
 	if (event.url.pathname == '/') {
-		let body = await response.text()
-		body += hiddenAnsi(
+		const body = hiddenAnsi(
+			await response.text(),
 			`\n${bold}Hazel Cora 💞${reset}\ndev @ ${link('https://besties.house', 'besties.house')} · ${link('https://social.besties.house/@h', '@h@besties.house')} · ${link('mailto:hey@hazy.gay', 'hey@hazy.gay')}\n\nsee ${link('https://hazy.gay', 'hazy.gay')} in a browser for more <3\n`
 		)
 
