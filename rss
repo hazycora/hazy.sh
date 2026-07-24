@@ -4,12 +4,44 @@
 		<link href="https://hazy.sh/rss" rel="self"/>
 		<link href="https://hazy.sh/blog"/>
 		<id>https://hazy.sh/rss</id>
-		<updated>2026-07-24T02:16:01.000Z</updated>
+		<updated>2026-07-24T02:46:49.000Z</updated>
 		<author>
 			<name>Hazel Cora</name>
 		</author>
 		<subtitle>hazel's blog for whatever</subtitle>
 		<generator>https://git.gay/h/hazysh</generator><entry>
+			<title>2026 PGP Key Transition</title>
+			<link href="https://hazy.sh/blog/2026-pgp-statement"/>
+			<id>https://hazy.sh/blog/2026-pgp-statement</id>
+			<updated>2026-07-23T00:00:00.000Z</updated>
+			<published>2026-07-23T00:00:00.000Z</published>
+			<content type="html"><![CDATA[
+<p>I don’t really use PGP for correspondence, so this doesn’t really matter to anyone,
+but regardless, I’m updating my PGP key. The old one is still me, it’s not been
+taken or anything, but I wanted to make a new cleaned-up key in any case since the
+old one’s been used for two years and is a bit out of date with its uids.</p>
+<p>Old fingerprint: 78F2D587B07CCEF764249C2377B7FDD77FD16F6D</p>
+<p>New fingerprint: 7A5EC0A21DFED2C159A76A3C4F844E7FE969A64A</p>
+<p>As always, my most up-to-date key can be found using WKD as well as at <a
+  href="https://hazy.sh/public.key"
+  rel="nofollow"
+>https://hazy.sh/public.key</a></p>
+<p>That’s all. Byebye!</p>
+<hr>
+<p>For verifying this message, have the following:</p>
+<ul>
+<li><a
+  href="/blog/2026-pgp-statement/verification.txt"
+>A copy of the post as a txt file</a></li>
+<li><a
+  href="/blog/2026-pgp-statement/old-sig.asc"
+>Detached signature using the old key</a></li>
+<li><a
+  href="/blog/2026-pgp-statement/new-sig.asc"
+>Detached signature using the new key</a></li>
+</ul>
+]]></content>
+		</entry><entry>
 			<title>2025 Wrapped and the future of Hazel Cora</title>
 			<link href="https://hazy.sh/blog/2025-wrapped"/>
 			<id>https://hazy.sh/blog/2025-wrapped</id>
