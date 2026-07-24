@@ -1,0 +1,27 @@
+---
+title: 2026 PGP Key Transition
+description: Exciting stuff, I know
+date: 2026-07-23
+---
+
+I don't really use PGP for correspondence, so this doesn't really matter to anyone,
+but regardless, I'm updating my PGP key. The old one is still me, it's not been
+taken or anything, but I wanted to make a new cleaned-up key in any case since the
+old one's been used for two years and is a bit out of date with its uids.
+
+Old fingerprint: 78F2D587B07CCEF764249C2377B7FDD77FD16F6D
+
+New fingerprint: 7A5EC0A21DFED2C159A76A3C4F844E7FE969A64A
+
+As always, my most up-to-date key can be found using WKD as well as at https://hazy.sh/public.key
+
+That's all. Byebye!
+
+---
+
+For verifying this message, have the following:
+
+- [A copy of the post as a txt file](/blog/2026-pgp-statement/verification.txt)
+- [Detached signature using the old key](/blog/2026-pgp-statement/old-sig.asc)
+- [Detached signature using the new key](/blog/2026-pgp-statement/new-sig.asc)
+
